@@ -45,18 +45,18 @@ public class SocketGame extends Thread{
 
 				}
 				else if(comms[0].equals("SELECT")){
-					//×øÓÎÏ·×À SELECT|tbIndex|side   side(0:ºÚ·½£»1£ººì·½)
+					//åæ¸¸æˆæ¡Œ SELECT|tbIndex|side   side(0:é»‘æ–¹ï¼›1ï¼šçº¢æ–¹)
 
 					int index=Integer.parseInt(comms[1]);
 					int side=Integer.parseInt(comms[2]);
 					GameTable gtable=GameService.getgameService().getGameTable(index);
 
-					//1¡¢ÅĞ¶ÏÊÇ·ñÄÜ¹»³É¹¦×øÏÂ
-					SocketGame currSG=gtable.getSocketGameByIndex(side); //µ±Ç°Òª×øÏÂµÄsocket
+					//1ã€åˆ¤æ–­æ˜¯å¦èƒ½å¤ŸæˆåŠŸåä¸‹
+					SocketGame currSG=gtable.getSocketGameByIndex(side); //å½“å‰è¦åä¸‹çš„socket
 					
-					String strResult="SITRESULT|"+index+"|"+side+"|";  //ÊÇ·ñ×ø³É¹¦µÄ½»»¥´®
+					String strResult="SITRESULT|"+index+"|"+side+"|";  //æ˜¯å¦åæˆåŠŸçš„äº¤äº’ä¸²
 					if(currSG!=null){
-						//ÒÑ¾­ÓĞÈË×øÏÂÊ§°Ü
+						//å·²ç»æœ‰äººåä¸‹å¤±è´¥
 						strResult+="0";
 						sendMSG(strResult);
 					}
@@ -65,20 +65,20 @@ public class SocketGame extends Thread{
 						strResult+="1";
 						sendMSG(strResult);
 						
-						//ÓÃ»§×øµ½ÓÎÏ·×ÀÉÏ
+						//ç”¨æˆ·ååˆ°æ¸¸æˆæ¡Œä¸Š
 						GameService.getgameService().setTableSide(gtable,side,this);
 						
 						this.player.setPlayside(side);
-						//2¡¢//¶Ô·½ÊÇ·ñ×øÏÂÈË£¬Èç¹ûÒÑ¾­ÓĞÈË£¬ĞÅÏ¢Í¨ÖªÎÒ·½£¨ÓÎÏ·Ö÷½çÃæµÄĞÅÏ¢Í¨ÖªÓÃ£©
+						//2ã€//å¯¹æ–¹æ˜¯å¦åä¸‹äººï¼Œå¦‚æœå·²ç»æœ‰äººï¼Œä¿¡æ¯é€šçŸ¥æˆ‘æ–¹ï¼ˆæ¸¸æˆä¸»ç•Œé¢çš„ä¿¡æ¯é€šçŸ¥ç”¨ï¼‰
 						String strmsg="SITDOWN|";  //SITDOWN|side|playername
 						SocketGame anotherSG=gtable.getAnotherSocketGame(this);
 						if(anotherSG!=null){
-							//¶Ô·½ÓÎÏ·ÕßÃû³ÆÍ¨ÖªÎÒ·½
+							//å¯¹æ–¹æ¸¸æˆè€…åç§°é€šçŸ¥æˆ‘æ–¹
 							sendMSG(strmsg+anotherSG.player.getPlayside()+"|"+anotherSG.player.getName());
-							//ÎÒ·½µÄÓÎÏ·ÕßÃû³ÆÍ¨Öª¶Ô·½
+							//æˆ‘æ–¹çš„æ¸¸æˆè€…åç§°é€šçŸ¥å¯¹æ–¹
 							anotherSG.sendMSG(strmsg+side+"|"+this.player.getName());
 						}
-						//update×ùÎ»¸øËùÓĞÈË
+						//updateåº§ä½ç»™æ‰€æœ‰äºº
 						//UPATETABLES|tabindex|side|flag
 						GameService.getgameService().sendAllSitdownMSG(this,index,side,"1");
 						
@@ -88,16 +88,16 @@ public class SocketGame extends Thread{
 					//GAMESTART|tableindex|side
 					int index=Integer.parseInt(comms[1]);
 					int side=Integer.parseInt(comms[2]);
-					player.setReady(true);  //½«±¾ÓÃ»§ÉèÖÃ³É×¼±¸×´Ì¬
+					player.setReady(true);  //å°†æœ¬ç”¨æˆ·è®¾ç½®æˆå‡†å¤‡çŠ¶æ€
 					
-					//µÃµ½¶Ô·½ÓÃ»§¶ÔÏó
+					//å¾—åˆ°å¯¹æ–¹ç”¨æˆ·å¯¹è±¡
 					SocketGame sgAnother=GameService.getgameService().getGameTable(index).getAnotherSocketGame(this);
-					sgAnother.sendMSG("MSG|"+player.getName()+"|Í¬Òâ¿ªÊ¼ÓÎÏ·¡£");  // MSG|playname|Í¬Òâ¿ªÊ¼ÓÎÏ·
+					sgAnother.sendMSG("MSG|"+player.getName()+"|åŒæ„å¼€å§‹æ¸¸æˆã€‚");  // MSG|playname|åŒæ„å¼€å§‹æ¸¸æˆ
 					
-					//Èç¹û¶Ô·½Ò²µã»÷ÁË¿ªÊ¼ÓÎÏ· £¬Á½ÈË¿ÉÒÔ¿ªÊ¼ÕıÊ½ÓÎÏ·£¬ÉèÖÃÓÎÏ·Ö÷½çÃæµÄisClick
-					//GAMESTART|ISCLICK  1£º¿ªÒÔµã»÷·ÅÆå×Ó£¬0:²»¿ÉÒÔ
+					//å¦‚æœå¯¹æ–¹ä¹Ÿç‚¹å‡»äº†å¼€å§‹æ¸¸æˆ ï¼Œä¸¤äººå¯ä»¥å¼€å§‹æ­£å¼æ¸¸æˆï¼Œè®¾ç½®æ¸¸æˆä¸»ç•Œé¢çš„isClick
+					//GAMESTART|ISCLICK  1ï¼šå¼€ä»¥ç‚¹å‡»æ”¾æ£‹å­ï¼Œ0:ä¸å¯ä»¥
 					if(sgAnother.player.isReady()){
-						//ºì·½ÏÈ¿ª¾Ö0£ººÚ×Ó£¬1£º°××Ó
+						//çº¢æ–¹å…ˆå¼€å±€0ï¼šé»‘å­ï¼Œ1ï¼šç™½å­
 						String strMsg="GAMESTART|";
 						if(side==0){
 							this.sendMSG(strMsg+"0");
@@ -107,32 +107,32 @@ public class SocketGame extends Thread{
 							this.sendMSG(strMsg+"1");
 							sgAnother.sendMSG(strMsg+"0");
 						} 
-						//ÓÎÏ·Êı¾İµÄ³õÊ¼»¯
+						//æ¸¸æˆæ•°æ®çš„åˆå§‹åŒ–
 						GameService.getgameService().gtables[index].resetData();
 					}
 				}
 				else if(comms[0].equals("SETPOS")){
-					//// ·¢ËÍ¸ñÊ½£ºSETPOS|×ÀºÅ|×ùÎ»ºÅ|ĞĞ|ÁĞ|Æå×ÓÀàĞÍ	
+					//// å‘é€æ ¼å¼ï¼šSETPOS|æ¡Œå·|åº§ä½å·|è¡Œ|åˆ—|æ£‹å­ç±»å‹	
 					int index=Integer.parseInt(comms[1]);
 					int side=Integer.parseInt(comms[2]);
 					int iColor=Integer.parseInt(comms[5]);
 					int i=Integer.parseInt(comms[3]);
 					int j=Integer.parseInt(comms[4]);
-					//ĞŞ¸ÄÓÎÏ·Êı¾İ
+					//ä¿®æ”¹æ¸¸æˆæ•°æ®
 					GameService.getgameService().getGameTable(index).setGameData(i, j,iColor);
 					
 					
 					SocketGame sgAnother=GameService.getgameService().getGameTable(index).getAnotherSocketGame(this);
 					
-					//³ö×ÓĞÅÏ¢ £¬Í¬²½µ½Ë«·½µÄ¿Í»§¶Ë
+					//å‡ºå­ä¿¡æ¯ ï¼ŒåŒæ­¥åˆ°åŒæ–¹çš„å®¢æˆ·ç«¯
 					//UPDATEPOS|x|y|chessColor|isClick
 					String sPos="UPDATEPOS|"+i+"|"+j+"|"+iColor+"|";
 					
-					sgAnother.sendMSG(sPos+"1");//¶Ô·½ÓÃ»§µÄ³ö×ÓÊı¾İ£¬²¢½«ÊÇ·ñ³ö×Ó¸ÄÎªtrue
+					sgAnother.sendMSG(sPos+"1");//å¯¹æ–¹ç”¨æˆ·çš„å‡ºå­æ•°æ®ï¼Œå¹¶å°†æ˜¯å¦å‡ºå­æ”¹ä¸ºtrue
 					
 					if(GameService.getgameService().isWin(index, i,j, side)){
-						//Ó®Æå  
-						//ÏòË«·½Í¨Öª»ñÊ¤ÕßµÄ½á¹û     //WIN|side
+						//èµ¢æ£‹  
+						//å‘åŒæ–¹é€šçŸ¥è·èƒœè€…çš„ç»“æœ     //WIN|side
 						this.sendMSG("WIN|"+side);
 						sgAnother.sendMSG("WIN|"+side);
 					}
@@ -144,13 +144,13 @@ public class SocketGame extends Thread{
 					int side=Integer.parseInt(comms[2]);
 					SocketGame sgAnother=GameService.getgameService().getGameTable(index).getAnotherSocketGame(this);
 					 
-					//¸üĞÂÓÎÏ·×ÀĞÅÏ¢
+					//æ›´æ–°æ¸¸æˆæ¡Œä¿¡æ¯
 					GameService.getgameService().getGameTable(index).cancelSide(side);
-					//Í¨Öª¶Ô·½£¬ÎÒ·½ÏÂÏß£¨¶Ô·½ÔÚÏßÊ±£©  //GAMEEXIT|playname|side
+					//é€šçŸ¥å¯¹æ–¹ï¼Œæˆ‘æ–¹ä¸‹çº¿ï¼ˆå¯¹æ–¹åœ¨çº¿æ—¶ï¼‰  //GAMEEXIT|playname|side
 					if (sgAnother!=null){
 						sgAnother.sendMSG("GAMEEXIT|"+player.getName()+"|"+side);
 					}
-					//¸üĞÂÓÎÏ·×ÀµÄĞÅÏ¢
+					//æ›´æ–°æ¸¸æˆæ¡Œçš„ä¿¡æ¯
 					GameService.getgameService().sendAllSitdownMSG(this,index,side,"0");
 				}
 				else if(comms[0].equals("MSG")){
@@ -163,11 +163,11 @@ public class SocketGame extends Thread{
 				}
 				else if(comms[0].equals("CLOSE")){
 					////CLOSE|name
-					//É¾³ıArraylistÖĞµÄÊı¾İ
+					//åˆ é™¤Arraylistä¸­çš„æ•°æ®
 					
 					GameService.getgameService().removeList(this);
 					this.closeSocket();
-					GameService.getgameService().setLogTxt(comms[1]+"ÒÑÍË³öÁ¬½Ó£¡");
+					GameService.getgameService().setLogTxt(comms[1]+"å·²é€€å‡ºè¿æ¥ï¼");
 				}
 			}
 		} catch (Exception e) {

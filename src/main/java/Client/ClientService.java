@@ -4,7 +4,7 @@ import java.net.*;
 
 
 public class ClientService {
-	private final static ClientService cService=new ClientService();//µ¥ÀıÓÎÏ··şÎñ¶ÔÏó
+	private final static ClientService cService=new ClientService();//å•ä¾‹æ¸¸æˆæœåŠ¡å¯¹è±¡
 	private ClientService(){
 		resetData();
 	}
@@ -12,17 +12,17 @@ public class ClientService {
 		return cService;
 	}
 	
-	//²Ù×÷ÓÎÏ·Êı¾İ
+	//æ“ä½œæ¸¸æˆæ•°æ®
 	private int [][] gameData=new int[9][10];
-	public int[][] getGameData(){//»ñÈ¡ÓÎÏ·Êı¾İgamedataÊı×é
+	public int[][] getGameData(){//è·å–æ¸¸æˆæ•°æ®gamedataæ•°ç»„
 		return gameData;
 	}
 	public void setGameData(int i,int j,int posValue){
-		gameData[i][j]=posValue;//ÔÚµÚiĞĞjÁĞ·ÅÖÃÆå×Ó 
+		gameData[i][j]=posValue;//åœ¨ç¬¬iè¡Œjåˆ—æ”¾ç½®æ£‹å­ 
 	}
-	public void resetData(){//ÖØĞÂÉèÖÃÓÎÏ·×ÀµÄ×´Ì¬
-		//ÆåÅÌ1-5ĞĞ·ÅÖÃºÚÆå
-		//1ĞĞ3ĞĞ4ĞĞ
+	public void resetData(){//é‡æ–°è®¾ç½®æ¸¸æˆæ¡Œçš„çŠ¶æ€
+		//æ£‹ç›˜1-5è¡Œæ”¾ç½®é»‘æ£‹
+		//1è¡Œ3è¡Œ4è¡Œ
 		for(int i=0;i<9;i++){
 			for(int j=0;j<10;j++){
 				gameData[i][j]=0;
@@ -37,27 +37,27 @@ public class ClientService {
 		gameData[6][0]=152;
 		gameData[7][0]=142;
 		gameData[8][0]=132;
-		//3ĞĞ
+		//3è¡Œ
 		gameData[1][2]=121;
 		gameData[7][2]=122;
-		//4ĞĞ×ä
+		//4è¡Œå’
 		gameData[0][3]=111;
 		gameData[2][3]=112;
 		gameData[4][3]=113;
 		gameData[6][3]=114;
 		gameData[8][3]=115;
 
-		//ÆåÅÌ6-10ĞĞ·ÅÖÃºìÆì
-		//7ĞĞ
+		//æ£‹ç›˜6-10è¡Œæ”¾ç½®çº¢æ——
+		//7è¡Œ
 		gameData[0][6]=211;
 		gameData[2][6]=212;
 		gameData[4][6]=213;
 		gameData[6][6]=214;
 		gameData[8][6]=215;
-		//8ĞĞ
+		//8è¡Œ
 		gameData[1][7]=221;
 		gameData[7][7]=222;
-		//10ĞĞ
+		//10è¡Œ
 		gameData[0][9]=231;
 		gameData[1][9]=241;
 		gameData[2][9]=251;
@@ -70,18 +70,18 @@ public class ClientService {
 	}
 	
 	
-	//ÓÎÏ·×À²Ù×÷
+	//æ¸¸æˆæ¡Œæ“ä½œ
 	public void genGameTables(String strtables){
 		String [] tables=strtables.split("_");
-		cWin.setCheckBoxCount(tables.length);  //ÉèÖÃ¸´Ñ¡¿ò
+		cWin.setCheckBoxCount(tables.length);  //è®¾ç½®å¤é€‰æ¡†
 		for (int i = 0; i < tables.length; i++) {
 			String st1=tables[i].charAt(0)+"";
 			String st2=tables[i].charAt(1)+"";
-			//µ÷ÓÃÖ÷½çÃæµÄ²åÈëÒ»¸öÓÎÏ·×À
+			//è°ƒç”¨ä¸»ç•Œé¢çš„æ’å…¥ä¸€ä¸ªæ¸¸æˆæ¡Œ
 			cWin.addTable(i,st1,st2);			
 		}
 	}
-	//¸üĞÂÓÎÏ·×ÀµÄÑ¡¶¨×´Ì¬
+	//æ›´æ–°æ¸¸æˆæ¡Œçš„é€‰å®šçŠ¶æ€
 	public void updateGameTable(int tbIndex, int side, String tableFlag){
         
         cWin.updateTable(tbIndex,side,tableFlag);
@@ -100,7 +100,7 @@ public class ClientService {
 		gForm.lbNames[side].setText(sName);
 	}
 	
-	//ÉèÖÃÓÎÏ·Ö÷½çÃæµÄÏûÏ¢¿ò
+	//è®¾ç½®æ¸¸æˆä¸»ç•Œé¢çš„æ¶ˆæ¯æ¡†
 	public void setLogTxt(String str){
 		gForm.txtLog.append(str+"\r\n");
 	}
@@ -109,7 +109,7 @@ public class ClientService {
 		gForm.setBtnStartStat();
 	}
 	
-	//ÉèÖÃÓÎÏ·½çÃæµÄµã»÷×´Ì¬
+	//è®¾ç½®æ¸¸æˆç•Œé¢çš„ç‚¹å‡»çŠ¶æ€
 	public void setGameIsClick(boolean flag){
 		gForm.isClick=flag;
 	}
@@ -117,10 +117,10 @@ public class ClientService {
 		gForm.isStart=flag;
 	}
 	public void updatePicPanel(){
-		gForm.panelDraw.repaint();//ÖØĞÂ»­ÆåÅÌ
+		gForm.panelDraw.repaint();//é‡æ–°ç”»æ£‹ç›˜
 	}
 	
-	//Á¬½Ó·şÎñÆ÷
+	//è¿æ¥æœåŠ¡å™¨
 	private ClientGame cGame;
 	public void connect(String ip,int port,String sName){
 		Socket socket=null;
@@ -132,18 +132,18 @@ public class ClientService {
 			e.printStackTrace();
 		}
 	}
-	//ÈË»ú¶ÔÕ½
+	//äººæœºå¯¹æˆ˜
 	private GameForm meachinegameform;
 	public void MeachineGame(GameForm mgf){
 		meachinegameform=mgf;
 		
 	}
-	//ÈË»ú¶ÔÕ½º¯Êı
+	//äººæœºå¯¹æˆ˜å‡½æ•°
 		public void meachineGame(){
 			gForm=new GameForm(0, 3);
 			gForm.setVisible(true);
 			ClientService.getClientService().setgForm(gForm);
-			//½«µ±Ç°ÓÎÏ·ÕßµÄÃû³Æ£¬ÉèÖÃµ½ÓÎÏ·Ö÷½çÃæÖĞ
+			//å°†å½“å‰æ¸¸æˆè€…çš„åç§°ï¼Œè®¾ç½®åˆ°æ¸¸æˆä¸»ç•Œé¢ä¸­
 			ClientService.getClientService().setGFormSideName(0,"Meachine");
 			ClientService.getClientService().setGFormSideName(1,"human");
 		}

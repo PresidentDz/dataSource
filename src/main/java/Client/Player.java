@@ -2,7 +2,7 @@ package Client;
 
 public class Player {
 	private String name;
-	private int playside=-1;   //×øÔÚÄÇÒ»±ß
+	private int playside=-1;   //ååœ¨é‚£ä¸€è¾¹
 	public int getPlayside() {
 		return playside;
 	}

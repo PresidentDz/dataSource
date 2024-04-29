@@ -78,37 +78,37 @@ public class ServerForm extends JFrame {
 		
 		label = new JLabel();
 		label.setText("\u5F00\u653E\u6E38\u620F\u684C\u6570\uFF1A");
-		label.setFont(new Font("ËÎÌå", Font.PLAIN, 12));
+		label.setFont(new Font("å®‹ä½“", Font.PLAIN, 12));
 		label.setBounds(12, 415, 84, 15);
 		contentPane.add(label);
 		
 		txtCount = new JTextField();
 		txtCount.setText("8");
-		txtCount.setFont(new Font("ËÎÌå", Font.PLAIN, 12));
+		txtCount.setFont(new Font("å®‹ä½“", Font.PLAIN, 12));
 		txtCount.setBounds(92, 412, 32, 21);
 		contentPane.add(txtCount);
 		
 		btnStart = new JButton("\u5F00\u542F\u670D\u52A1");
 		btnStart.addActionListener(new BtnStartActionListener());
-		btnStart.setFont(new Font("ËÎÌå", Font.PLAIN, 12));
+		btnStart.setFont(new Font("å®‹ä½“", Font.PLAIN, 12));
 		btnStart.setBounds(246, 412, 84, 21);
 		contentPane.add(btnStart);
 		
 		btnStop = new JButton("\u505C\u6B62\u670D\u52A1");
 		btnStop.addActionListener(new BtnStopActionListener());
-		btnStop.setFont(new Font("ËÎÌå", Font.PLAIN, 12));
+		btnStop.setFont(new Font("å®‹ä½“", Font.PLAIN, 12));
 		btnStop.setBounds(334, 412, 84, 21);
 		contentPane.add(btnStop);
 		
 		label_1 = new JLabel();
 		label_1.setText("\u7AEF\u53E3\uFF1A");
-		label_1.setFont(new Font("ËÎÌå", Font.PLAIN, 12));
+		label_1.setFont(new Font("å®‹ä½“", Font.PLAIN, 12));
 		label_1.setBounds(129, 414, 41, 15);
 		contentPane.add(label_1);
 		
 		txtPort = new JTextField();
 		txtPort.setText("8800");
-		txtPort.setFont(new Font("ËÎÌå", Font.PLAIN, 12));
+		txtPort.setFont(new Font("å®‹ä½“", Font.PLAIN, 12));
 		txtPort.setBounds(165, 412, 52, 21);
 		contentPane.add(txtPort);
 	}
@@ -118,12 +118,12 @@ public class ServerForm extends JFrame {
 			try {
 				int port =Integer.parseInt(txtPort.getText().trim());
 				int count=Integer.parseInt(txtCount.getText().trim());
-				//Éú³ÉÓÎÏ·×À
+				//ç”Ÿæˆæ¸¸æˆæ¡Œ
 				GameService.getgameService().genGameTables(count);
 				server=new ServerSocket(port);
 				sListener=new ServerListener(server);
 				sListener.start();
-				GameService.getgameService().setLogTxt("·şÎñÆ÷ÒÑÆô¶¯...");
+				GameService.getgameService().setLogTxt("æœåŠ¡å™¨å·²å¯åŠ¨...");
 				
 			} catch (Exception ee) {
 				ee.printStackTrace();
@@ -136,7 +136,7 @@ public class ServerForm extends JFrame {
 				sListener.stopListener();
 				if(server!=null)
 				   server.close();
-				GameService.getgameService().setLogTxt("·şÎñÆ÷ÒÑÍ£Ö¹£¡");
+				GameService.getgameService().setLogTxt("æœåŠ¡å™¨å·²åœæ­¢ï¼");
 			} catch (Exception e2) {
 				e2.printStackTrace();
 			}
