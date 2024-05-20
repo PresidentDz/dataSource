@@ -54,7 +54,7 @@ public class ClientGame extends Thread {
 					ClientService.getClientService().genGameTables(comms[1]);
 				}
 				else if(comms[0].equals("UPATETABLES")){
-					//?????????
+					//更新桌面
 					//UPATETABLES|tableIndex|side|Flag  
 					
 					int index=Integer.parseInt(comms[1]);
