@@ -76,7 +76,7 @@ public class ClientForm extends JFrame {
 		contentPane.setLayout(null);
 		
 		label = new JLabel("IP");
-		label.setFont(new Font("????", Font.PLAIN, 12));
+		label.setFont(new Font("宋体", Font.PLAIN, 12));
 		label.setBounds(9, 13, 19, 21);
 		contentPane.add(label);
 		
@@ -87,7 +87,7 @@ public class ClientForm extends JFrame {
 		contentPane.add(txtIP);
 		
 		label_1 = new JLabel("\u7AEF\u53E3");
-		label_1.setFont(new Font("????", Font.PLAIN, 12));
+		label_1.setFont(new Font("宋体", Font.PLAIN, 12));
 		label_1.setHorizontalAlignment(SwingConstants.RIGHT);
 		label_1.setBounds(104, 16, 34, 15);
 		contentPane.add(label_1);
@@ -99,7 +99,7 @@ public class ClientForm extends JFrame {
 		contentPane.add(txtPort);
 		
 		label_2 = new JLabel("\u7528\u6237\u540D");
-		label_2.setFont(new Font("????", Font.PLAIN, 12));
+		label_2.setFont(new Font("宋体", Font.PLAIN, 12));
 		label_2.setHorizontalAlignment(SwingConstants.RIGHT); 
 		label_2.setBounds(184, 16, 49, 15);
 		contentPane.add(label_2);
@@ -122,7 +122,7 @@ public class ClientForm extends JFrame {
 		contentPane.add(btnClose);
 		
 		scrollPane = new JScrollPane();
-		scrollPane.setFont(new Font("????", Font.PLAIN, 12));
+		scrollPane.setFont(new Font("宋体", Font.PLAIN, 12));
 		scrollPane.setBorder(new TitledBorder(null, "\u6E38\u620F\u684C", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		scrollPane.setBounds(1, 78, 435, 392);
 		contentPane.add(scrollPane);
@@ -152,7 +152,7 @@ public class ClientForm extends JFrame {
 		jCheckBoxs[i][0] = new JCheckBox();
 		jCheckBoxs[i][0].setBackground(Color.WHITE);
 		jCheckBoxs[i][0].setHorizontalAlignment(SwingConstants.RIGHT);
-		jCheckBoxs[i][0].setText("???");
+		jCheckBoxs[i][0].setText("黑方");
 		jCheckBoxs[i][0].setName(i+"|0");	//	???????????????????????????????+???????????
 		if (s1.equals("1"))  //???????????????????????CHeckbox ????????ó??????
 		{
@@ -163,7 +163,7 @@ public class ClientForm extends JFrame {
 
 		//??????????logo
 		JLabel lbImag = new JLabel("");//??????????logo
-		Image img=new ImageIcon("img\\board.jpg").getImage().getScaledInstance(40, 40, Image.SCALE_SMOOTH);
+		Image img=new ImageIcon("img/board.jpg").getImage().getScaledInstance(40, 40, Image.SCALE_SMOOTH);
 		lbImag.setIcon(new ImageIcon(img));
 		lbImag.setHorizontalAlignment(SwingConstants.CENTER);
 		jp.add(lbImag);
@@ -172,7 +172,7 @@ public class ClientForm extends JFrame {
 		jCheckBoxs[i][1] = new JCheckBox();
 		jCheckBoxs[i][1].setBackground(Color.WHITE);
 		jCheckBoxs[i][1].setHorizontalAlignment(SwingConstants.LEFT);
-		jCheckBoxs[i][1].setText("??");
+		jCheckBoxs[i][1].setText("红方");
 		jCheckBoxs[i][1].setName(i+"|1");
 		if (s2.equals("1")) //???????????????????????CHeckbox ????????ó??????
 		{

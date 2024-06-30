@@ -78,7 +78,7 @@ public class ClientGame extends Thread {
 			    		player.setPlayside(side);
 					}
 			    	else {
-						JOptionPane.showMessageDialog(null, "???????? ?????????????");
+						JOptionPane.showMessageDialog(null, "???????? 已重置！");
 					}
 					
 				}
@@ -117,7 +117,7 @@ public class ClientGame extends Thread {
 				else if (comms[0].equals("WIN")) 
 				{
 					//WIN|side
-					String strInfo=comms[1].equals("0")?"??????":"?????";
+					String strInfo=comms[1].equals("0")?"黑方胜！":"红方胜！";
 					ClientService.getClientService().setLogTxt(strInfo);
 					JOptionPane.showMessageDialog(null, strInfo);
 					
@@ -134,7 +134,7 @@ public class ClientGame extends Thread {
 					//GAMEEXIT|playname|side
 					int side=Integer.parseInt(comms[2]);
 					
-					ClientService.getClientService().setLogTxt(comms[1]+"???????");
+					ClientService.getClientService().setLogTxt(comms[1]+"逃跑了！");
 					//???????????????
 					ClientService.getClientService().setGameIsStart(false);
 					ClientService.getClientService().setGameIsClick(false);
@@ -147,7 +147,7 @@ public class ClientGame extends Thread {
 					//???????????????????
 					ClientService.getClientService().setbtnStartState();  
 			    	
-			    	JOptionPane.showMessageDialog(null, "??????????");
+			    	JOptionPane.showMessageDialog(null, "逃跑了！");
 				}
 				
 			}

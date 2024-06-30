@@ -78,7 +78,7 @@ public class picPanel extends JPanel {
 	//??
 	Image imgBj;
 	
-	//????????????  ??ÿ??????? 60
+	//????????????  ??ï¿½??????? 60
 	int iLeft=40;
 	int iTop=45;
 	/**
@@ -90,55 +90,55 @@ public class picPanel extends JPanel {
 		//??ClientService???gamedata???????
 		gamedata=ClientService.getClientService().getGameData();
 		//????
-		imgBoard=new ImageIcon("img\\board.jpg").getImage();
+		imgBoard=new ImageIcon("img/board.jpg").getImage();
 		
 		//?? ??5
-		 imgRb1=new ImageIcon("img\\rb.jpg").getImage();
-		 imgRb2=new ImageIcon("img\\rb.jpg").getImage();
-		 imgRb3=new ImageIcon("img\\rb.jpg").getImage();
-		 imgRb4=new ImageIcon("img\\rb.jpg").getImage();
-		 imgRb5=new ImageIcon("img\\rb.jpg").getImage();
+		 imgRb1=new ImageIcon("img/rb.jpg").getImage();
+		 imgRb2=new ImageIcon("img/rb.jpg").getImage();
+		 imgRb3=new ImageIcon("img/rb.jpg").getImage();
+		 imgRb4=new ImageIcon("img/rb.jpg").getImage();
+		 imgRb5=new ImageIcon("img/rb.jpg").getImage();
 		//??
-		 imgRju1=new ImageIcon("img\\rj.jpg").getImage();
-		 imgRju2=new ImageIcon("img\\rj.jpg").getImage();
+		 imgRju1=new ImageIcon("img/rj.jpg").getImage();
+		 imgRju2=new ImageIcon("img/rj.jpg").getImage();
 		//??
-		 imgRm1=new ImageIcon("img\\rm.jpg").getImage();
-		 imgRm2=new ImageIcon("img\\rm.jpg").getImage();
+		 imgRm1=new ImageIcon("img/rm.jpg").getImage();
+		 imgRm2=new ImageIcon("img/rm.jpg").getImage();
 		//??
-		 imgRp1=new ImageIcon("img\\rp.jpg").getImage();
-		 imgRp2=new ImageIcon("img\\rp.jpg").getImage();
+		 imgRp1=new ImageIcon("img/rp.jpg").getImage();
+		 imgRp2=new ImageIcon("img/rp.jpg").getImage();
 		//??
-		 imgRx1=new ImageIcon("img\\rx.jpg").getImage();
-		 imgRx2=new ImageIcon("img\\rx.jpg").getImage();
+		 imgRx1=new ImageIcon("img/rx.jpg").getImage();
+		 imgRx2=new ImageIcon("img/rx.jpg").getImage();
 		//?
-		 imgRs1=new ImageIcon("img\\rs.jpg").getImage();
-		 imgRs2=new ImageIcon("img\\rs.jpg").getImage();
+		 imgRs1=new ImageIcon("img/rs.jpg").getImage();
+		 imgRs2=new ImageIcon("img/rs.jpg").getImage();
 		 //?
-		 imgRss=new ImageIcon("img\\rss.jpg").getImage();
+		 imgRss=new ImageIcon("img/rss.jpg").getImage();
 		
 		//??? ??5
-		 imgBzu1=new ImageIcon("img\\bz.jpg").getImage();
-		 imgBzu2=new ImageIcon("img\\bz.jpg").getImage();
-		 imgBzu3=new ImageIcon("img\\bz.jpg").getImage();
-		 imgBzu4=new ImageIcon("img\\bz.jpg").getImage();
-		 imgBzu5=new ImageIcon("img\\bz.jpg").getImage();
+		 imgBzu1=new ImageIcon("img/bz.jpg").getImage();
+		 imgBzu2=new ImageIcon("img/bz.jpg").getImage();
+		 imgBzu3=new ImageIcon("img/bz.jpg").getImage();
+		 imgBzu4=new ImageIcon("img/bz.jpg").getImage();
+		 imgBzu5=new ImageIcon("img/bz.jpg").getImage();
 		//??
-		 imgBju1=new ImageIcon("img\\bju.jpg").getImage();
-		 imgBju2=new ImageIcon("img\\bju.jpg").getImage();
+		 imgBju1=new ImageIcon("img/bju.jpg").getImage();
+		 imgBju2=new ImageIcon("img/bju.jpg").getImage();
 		//??
-		 imgBm1=new ImageIcon("img\\bm.jpg").getImage();
-		 imgBm2=new ImageIcon("img\\bm.jpg").getImage();
+		 imgBm1=new ImageIcon("img/bm.jpg").getImage();
+		 imgBm2=new ImageIcon("img/bm.jpg").getImage();
 		//??
-		 imgBp1=new ImageIcon("img\\bp.jpg").getImage();
-		 imgBp2=new ImageIcon("img\\bp.jpg").getImage();
+		 imgBp1=new ImageIcon("img/bp.jpg").getImage();
+		 imgBp2=new ImageIcon("img/bp.jpg").getImage();
 		//??
-		 imgBx1=new ImageIcon("img\\bx.jpg").getImage();
-		 imgBx2=new ImageIcon("img\\bx.jpg").getImage();
+		 imgBx1=new ImageIcon("img/bx.jpg").getImage();
+		 imgBx2=new ImageIcon("img/bx.jpg").getImage();
 		//?
-		 imgBs1=new ImageIcon("img\\bs.jpg").getImage();
-		 imgBs2=new ImageIcon("img\\bs.jpg").getImage();
+		 imgBs1=new ImageIcon("img/bs.jpg").getImage();
+		 imgBs2=new ImageIcon("img/bs.jpg").getImage();
 		 //??
-		 imgBj=new ImageIcon("img\\bj.jpg").getImage();
+		 imgBj=new ImageIcon("img/bj.jpg").getImage();
 		
 		
 	}
@@ -202,12 +202,12 @@ public class picPanel extends JPanel {
 		*/
 		g.drawImage(imgBoard, 0, 0, null);
 		
-		for (int i = 0; i < gamedata.length; i++) {//???????ÿ??????????????
-			for (int j = 0; j < gamedata[0].length; j++) {//???????ÿ???????????
+		for (int i = 0; i < gamedata.length; i++) {//???????ï¿½??????????????
+			for (int j = 0; j < gamedata[0].length; j++) {//???????ï¿½???????????
 				int xx=i*60+iLeft-30;//????x????
 				int yy=j*60+iTop-30;//????y????
 				
-				//???ú?????????????????
+				//???ï¿½?????????????????
 				switch(gamedata[i][j]){
 				//????? 111-115
 					case 111:

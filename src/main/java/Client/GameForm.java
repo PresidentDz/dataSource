@@ -37,25 +37,25 @@ public class GameForm extends JFrame {
 	public JPanel panel_1;
 
 	
-	JLabel [] lbNames=new JLabel[2]; //ºÚ·½»ò°×·½µÄÓÎÏ·ÕßÃû³Æ 0£ººÚ·½Ãû³Æ£¬1£ººì·½Ãû³Æ
+	JLabel [] lbNames=new JLabel[2]; //ï¿½Ú·ï¿½ï¿½ï¿½×·ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 0ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½Æ£ï¿½1ï¿½ï¿½ï¿½ì·½ï¿½ï¿½ï¿½ï¿½
 	public JPanel panelDraw;
 	public JButton btnStart;
 	public JButton btnClose;
 
-	int gametableIndex;  //¼ÇÂ¼ÓÎÏ·×ÀµÄ±àºÅ
-	int side;            //ÓÎÏ·×ÀµÄ×ùÎ»ºÅ
+	int gametableIndex;  //ï¿½ï¿½Â¼ï¿½ï¿½Ï·ï¿½ï¿½ï¿½Ä±ï¿½ï¿½
+	int side;            //ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½
 	public JScrollPane scrollPane;
 	public JTextArea txtLog;
 	public JTextField txtSend;
 	public JButton btnSend;
 	
-	boolean isMeachine;//ÈË»ú¶ÔŞÄ±êÖ¾
-	boolean isStart; //¿ªÊ¼ÓÎÏ·µÄ±ê¼Ç
-	boolean isClick;  //½»Ìæ³ö×ÓµÄ¿ª¹Ø±äÁ¿
-	int ChessType; //Æå×ÓÀàĞÍ  1£ººÚ·½£»2£ººì·½    
-					//ºÚ·½1-ºì·½2-
-					//1,±ø¡¢×ä  
-					//2ÅÚ  3‚e 4Âí 5Ïà 6ÊË7½«¡¢Ë§	
+	boolean isMeachine;//ï¿½Ë»ï¿½ï¿½ï¿½ï¿½Ä±ï¿½Ö¾
+	boolean isStart; //ï¿½ï¿½Ê¼ï¿½ï¿½Ï·ï¿½Ä±ï¿½ï¿½
+	boolean isClick;  //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÓµÄ¿ï¿½ï¿½Ø±ï¿½ï¿½ï¿½
+	int ChessType; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  1ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½2ï¿½ï¿½ï¿½ì·½    
+					//ï¿½Ú·ï¿½1-ï¿½ì·½2-
+					//1,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  
+					//2ï¿½ï¿½  3ï¿½e 4ï¿½ï¿½ 5ï¿½ï¿½ 6ï¿½ï¿½7ï¿½ï¿½ï¿½ï¿½Ë§	
 	
 //	public static void main(String[] args) {
 //		EventQueue.invokeLater(new Runnable() {
@@ -78,15 +78,15 @@ public class GameForm extends JFrame {
 			this.side=1;
 		}
 		if(side==0){
-			setTitle("µ±Ç°Ñ¡ÔñÎª£º¡¾ºÚ·½¡¿");
+			setTitle("ä¸­å›½è±¡æ£‹");
 			ChessType=1;
 		}
 			
 		else{
-			setTitle("µ±Ç°Ñ¡ÔñÎª£º¡¾ºì·½¡¿");
+			setTitle("ä¸­å›½è±¡æ£‹");
 			ChessType=2;
 		}
-		if(!isMeachine){//side=3 ´ú±íÈË»ú¶ÔŞÄÄ£Ê½
+		if(!isMeachine){//side=3 ï¿½ï¿½ï¿½ï¿½ï¿½Ë»ï¿½ï¿½ï¿½ï¿½ï¿½Ä£Ê½
 			gametableIndex=tbIndex;
 			this.side=side;	
 		}
@@ -106,18 +106,18 @@ public class GameForm extends JFrame {
 		panel.setLayout(null);
 		
 		lbNames[0] = new JLabel("");
-		lbNames[0].setFont(new Font("ËÎÌå", Font.PLAIN, 12));
+		lbNames[0].setFont(new Font("å®‹ä½“", Font.PLAIN, 12));
 		lbNames[0].setBounds(37, 67, 54, 15);
 		panel.add(lbNames[0]);
 		
 		panel_1 = new JPanel();
-		panel_1.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "ºì·½", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panel_1.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "ï¿½ì·½", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		panel_1.setBounds(10, 202, 130, 182);
 		contentPane.add(panel_1);
 		panel_1.setLayout(null);
 		
 		lbNames[1] = new JLabel("");
-		lbNames[1].setFont(new Font("ËÎÌå", Font.PLAIN, 12));
+		lbNames[1].setFont(new Font("å®‹ä½“", Font.PLAIN, 12));
 		lbNames[1].setBounds(37, 67, 54, 15);
 		panel_1.add(lbNames[1]);
 		
@@ -128,7 +128,7 @@ public class GameForm extends JFrame {
 		
 		btnClose = new JButton("\u9000\u51FA\u6E38\u620F");
 		btnClose.addActionListener(new BtnCloseActionListener());
-		btnClose.setFont(new Font("ËÎÌå", Font.PLAIN, 12));
+		btnClose.setFont(new Font("å®‹ä½“", Font.PLAIN, 12));
 		btnClose.setBounds(24, 494, 116, 29);
 		contentPane.add(btnClose);
 		
@@ -153,7 +153,7 @@ public class GameForm extends JFrame {
 		btnSend.addActionListener(new BtnSendActionListener());
 		btnSend.setToolTipText("");
 		btnSend.setMargin(new Insets(2, 2, 2, 2));
-		btnSend.setFont(new Font("ËÎÌå", Font.PLAIN, 12));
+		btnSend.setFont(new Font("å®‹ä½“", Font.PLAIN, 12));
 		btnSend.setBounds(946, 366, 45, 29);
 		contentPane.add(btnSend);
 		
@@ -162,9 +162,9 @@ public class GameForm extends JFrame {
 		contentPane.add(btnStart);
 		btnStart.addActionListener(new BtnStartActionListener());
 		btnStart.setEnabled(false);
-		btnStart.setFont(new Font("ËÎÌå", Font.PLAIN, 12));
+		btnStart.setFont(new Font("å®‹ä½“", Font.PLAIN, 12));
 		
-		if (isMeachine) {//Èç¹ûÊÇÈË»ú¶ÔŞÄÄ£Ê½£¬´ò¿ª ¡°¿ªÊ¼°´Å¥¡±
+		if (isMeachine) {//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë»ï¿½ï¿½ï¿½ï¿½ï¿½Ä£Ê½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Å¥ï¿½ï¿½
 			btnStart.setEnabled(true);
 		}
 	}
@@ -191,73 +191,73 @@ public class GameForm extends JFrame {
 			
 			if(!isStart)
 				return; 
-			if(isClick){//»ñÈ¡Êó±êµã»÷Î»ÖÃµÄ×ø±ê
+			if(isClick){//ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½
 				
 				count++;
 				//int i,j;
 					int x=e.getX();
 					int y=e.getY();
-					//Í¨¹ıµã»÷Æå×Ó»ñÈ¡Æå×ÓÀàĞÍ(Í¨¹ıµã»÷Æå×Ó»ñÈ¡Æå×ÓµÄx,y×ø±ê,´ÓgamedataÖĞ»ñÈ¡Æå×ÓÀàĞÍ)
-					int gamedata[][]=ClientService.getClientService().getGameData();//»ñÈ¡ÓÎÏ·Êı¾İ 
+					//Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó»ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó»ï¿½È¡ï¿½ï¿½ï¿½Óµï¿½x,yï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½gamedataï¿½Ğ»ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
+					int gamedata[][]=ClientService.getClientService().getGameData();//ï¿½ï¿½È¡ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½ 
 					//setTitle(x+"|"+y);
-					//´ÓÊó±êµÄµ±Ç°×ø±ê×ª»»³ÉGameDataÊı×éµÄÏÂ±ê
-					//µ±Ç°µÄ×ø±êÖµ-ÆåÅÌµÄ±ß¿òµÄ½á¹û³ıÒÔÆåÅÌ¸ñ×Ó¿í¶È»ò¸ß¶È
+					//ï¿½ï¿½ï¿½ï¿½ï¿½Äµï¿½Ç°ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½GameDataï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â±ï¿½
+					//ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ-ï¿½ï¿½ï¿½ÌµÄ±ß¿ï¿½Ä½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ï¿½Ó¿ï¿½È»ï¿½ß¶ï¿½
 					
-				if(count%2!=0){//count%2!=0 ´ú±íµÚÒ»´ÎÑ¡ÔñÆå×ÓÀàĞÍ
-					  i=Math.round((x-40)/60f);//µÚÒ»´ÎÆå×ÓµÄÎ»ÖÃ
+				if(count%2!=0){//count%2!=0 ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+					  i=Math.round((x-40)/60f);//ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Óµï¿½Î»ï¿½ï¿½
 					  j=Math.round((y-45)/60f); 
 				}
 				 
-				if(i>9||j>10){return;}//Ñ¡ÔñÇøÓò³¬³ö·¶Î§ ¾Í·µ»ØÖØĞÂÑ¡Ôñ
+				if(i>9||j>10){return;}//Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½ò³¬³ï¿½ï¿½ï¿½Î§ ï¿½Í·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½
 				if(i>=0 && i<9 && j>=0 && j<10){
-					int currenttype=gamedata[i][j];//Æå×Óµ±Ç°µÄÀàĞÍ
+					int currenttype=gamedata[i][j];//ï¿½ï¿½ï¿½Óµï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 					if(currenttype==0){
-						return;//Èç¹ûÑ¡ÔñÆå×ÓÎª¿Õ·µ»Ø
+						return;//ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½Õ·ï¿½ï¿½ï¿½
 					}
 					if(side==0&&currenttype>170){
-						return;//Èç¹ûºÚ·½Ñ¡Ôñºì·½µÄÆå×Ó·µ»Ø
+						return;//ï¿½ï¿½ï¿½ï¿½Ú·ï¿½Ñ¡ï¿½ï¿½ì·½ï¿½ï¿½ï¿½ï¿½ï¿½Ó·ï¿½ï¿½ï¿½
 					}
 					if(side==1&&currenttype<=170){
-						return;//Èç¹ûºì·½Ñ¡ÔñºÚ·½µÄÆå×Ó·µ»Ø
+						return;//ï¿½ï¿½ï¿½ï¿½ì·½Ñ¡ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó·ï¿½ï¿½ï¿½
 					}
 					if(count%2!=0){
 						if (side==0) {
-							System.out.println("ºÚ·½ Ñ¡ÔñÆå×Ó £º"+currenttype+"  "+j+"  "+i);//Êä³öµ±Ç°Ñ¡ÔñµÄÆå×Ó
-							txtLog.append("ºÚ·½ Ñ¡ÔñÆå×Ó £º"+currenttype+"  "+j+"  "+i+"\r\n");
+							System.out.println("é»‘æ–¹"+currenttype+"  "+j+"  "+i);//ï¿½ï¿½ï¿½ï¿½ï¿½Ç°Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+							txtLog.append("é»‘æ–¹"+currenttype+"  "+j+"  "+i+"\r\n");
 						}else{
-							System.out.println("ºì·½ Ñ¡ÔñÆå×Ó £º"+currenttype+"  "+j+"  "+i);//Êä³öµ±Ç°Ñ¡ÔñµÄÆå×Ó
-							txtLog.append("ºì·½ Ñ¡ÔñÆå×Ó £º"+currenttype+"  "+j+"  "+i+"\r\n");
+							System.out.println("çº¢æ–¹"+currenttype+"  "+j+"  "+i);//ï¿½ï¿½ï¿½ï¿½ï¿½Ç°Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+							txtLog.append("çº¢æ–¹"+currenttype+"  "+j+"  "+i+"\r\n");
 						}
 						
 					}
 					
 					
 					ChessType=currenttype; 
-					if(side==0&&currenttype<=170&&count%2==0){//Èç¹ûÊÇºÚ·½£¬ÓÎÏ·Êı¾İÖĞµÄÖµ±ØĞëĞ¡ÓÚ170
+					if(side==0&&currenttype<=170&&count%2==0){//ï¿½ï¿½ï¿½ï¿½ÇºÚ·ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½ï¿½Ğµï¿½Öµï¿½ï¿½ï¿½ï¿½Ğ¡ï¿½ï¿½170
 					  
 							int i2=Math.round((x-40)/60f);
 							int j2=Math.round((y-45)/60f);
-							if(i2>9||i2<0||j2>10||j2<0){return;}//Ñ¡ÔñÇøÓò³¬³ö·¶Î§ ¾Í·µ»ØÖØĞÂÑ¡Ôñ
-							System.out.println("ºÚ·½ Ñ¡ÔñÂä×Ó·½Î»£º"+currenttype+"  "+j2+" "+i2);
-							txtLog.append("ºÚ·½ Ñ¡ÔñÂä×Ó·½Î»£º"+currenttype+"  "+j2+" "+i2+"\r\n");
+							if(i2>9||i2<0||j2>10||j2<0){return;}//Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½ò³¬³ï¿½ï¿½ï¿½Î§ ï¿½Í·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½
+							System.out.println("ä¸­å›½è±¡æ£‹"+currenttype+"  "+j2+" "+i2);
+							txtLog.append("ä¸­å›½è±¡æ£‹"+currenttype+"  "+j2+" "+i2+"\r\n");
 							
 							int chess1,chess2;
 							int chessdata[][]=ClientService.getClientService().getGameData();
 							chess1=chessdata[i][j]+10/100;
 							chess2=chessdata[i2][j2]+10/100;
-							if(i2==i&&j2==j||i2<0||i2>8||j2<0||j2>9||chess1==chess2){//ÅĞ¶ÏµÚ¶ş´ÎÑ¡ÔñµÄÊÇ·ñÊÇÔ­Î»ÖÃÈç¹ûÊÇÔ­Î»ÖÃÖØĞÂÑ¡Ôñ »òÕß³¬³ö·¶Î§
-								ClientService.getClientService().setGameData(i, j, currenttype);//½«±»Ñ¡ÖĞµÄÆå×ÓµÄÔ­À´µÄ×ø±êÖÃÎª0
-								panelDraw.repaint();//ÖØ»­ÆåÅÌ
-								if(!isMeachine){//ÅĞ¶ÏÊÇ·ñÊÇÈË»úÄ£Ê½
+							if(i2==i&&j2==j||i2<0||i2>8||j2<0||j2>9||chess1==chess2){//ï¿½Ğ¶ÏµÚ¶ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½Ô­Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô­Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ ï¿½ï¿½ï¿½ß³ï¿½ï¿½ï¿½ï¿½ï¿½Î§
+								ClientService.getClientService().setGameData(i, j, currenttype);//ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½Ğµï¿½ï¿½ï¿½ï¿½Óµï¿½Ô­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª0
+								panelDraw.repaint();//ï¿½Ø»ï¿½ï¿½ï¿½ï¿½ï¿½
+								if(!isMeachine){//ï¿½Ğ¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ë»ï¿½Ä£Ê½
 									String str="SETPOS|"+gametableIndex+"|"+side+"|"+i+"|"+j+"|"+ChessType;
 									ClientService.getClientService().getClientGame().sendMSG(str);
 								}
 								
 								return ;
 							}else{
-								ClientService.getClientService().setGameData(i, j, 0);//½«±»Ñ¡ÖĞµÄÆå×ÓµÄÔ­À´µÄ×ø±êÖÃÎª0
-								panelDraw.repaint();//ÖØ»­ÆåÅÌ
-								if(!isMeachine){//ÅĞ¶ÏÊÇ·ñÊÇÈË»úÄ£Ê½
+								ClientService.getClientService().setGameData(i, j, 0);//ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½Ğµï¿½ï¿½ï¿½ï¿½Óµï¿½Ô­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª0
+								panelDraw.repaint();//ï¿½Ø»ï¿½ï¿½ï¿½ï¿½ï¿½
+								if(!isMeachine){//ï¿½Ğ¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ë»ï¿½Ä£Ê½
 									String str="SETPOS|"+gametableIndex+"|"+side+"|"+i+"|"+j+"|"+0;
 									ClientService.getClientService().getClientGame().sendMSG(str);
 								}
@@ -266,7 +266,7 @@ public class GameForm extends JFrame {
 							if(i2>=0&&i2<9&&j2>=0&&j2<10){
 								 
 								switch (ChessType) {
-									case 111:	//ÅĞ¶Ï  ×ä µÄÒÆ¶¯Î»ÖÃÊÇ·ñÎª 1²½
+									case 111:	//ï¿½Ğ¶ï¿½  ï¿½ï¿½ ï¿½ï¿½ï¿½Æ¶ï¿½Î»ï¿½ï¿½ï¿½Ç·ï¿½Îª 1ï¿½ï¿½
 									case 112:
 									case 113:
 									case 114:
@@ -274,12 +274,12 @@ public class GameForm extends JFrame {
 										int data[][]=ClientService.getClientService().getGameData();
 										if(((i2==i+1&&j==j2&&i+1<=8&&j>=5)||(i2==i&&j2==j+1&&j+1<=9&&j>=3)||(i2==i-1&&j2==j&&i-1>=0&&j>=5))&&(data[i2][j2]>200||data[i2][j2]==0)){
 											
-											i=i2;//Èç¹û±ø×ßµÄ·ûºÏµÄ¹æÔò
+											i=i2;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ßµÄ·ï¿½ï¿½ÏµÄ¹ï¿½ï¿½ï¿½
 											j=j2;
 										}else{
-											ClientService.getClientService().setGameData(i, j, currenttype);//½«±»Ñ¡ÖĞµÄÆå×ÓµÄÔ­À´µÄ×ø±êÖÃÎª0
-											panelDraw.repaint();//ÖØ»­ÆåÅÌ
-											if (!isMeachine) {//ÅĞ¶ÏÊÇ·ñÊÇÈË»úÄ£Ê½
+											ClientService.getClientService().setGameData(i, j, currenttype);//ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½Ğµï¿½ï¿½ï¿½ï¿½Óµï¿½Ô­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª0
+											panelDraw.repaint();//ï¿½Ø»ï¿½ï¿½ï¿½ï¿½ï¿½
+											if (!isMeachine) {//ï¿½Ğ¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ë»ï¿½Ä£Ê½
 												String str="SETPOS|"+gametableIndex+"|"+side+"|"+i+"|"+j+"|"+ChessType;
 												ClientService.getClientService().getClientGame().sendMSG(str);
 											}
@@ -287,7 +287,7 @@ public class GameForm extends JFrame {
 											return;
 										}
 										break;
-									case 121://ÅĞ¶Ï  ÅÚ  ×ßµÄÊÇ·ñºÏ·¨ ²»ÄÜ¹ÕÍä
+									case 121://ï¿½Ğ¶ï¿½  ï¿½ï¿½  ï¿½ßµï¿½ï¿½Ç·ï¿½Ï·ï¿½ ï¿½ï¿½ï¿½Ü¹ï¿½ï¿½ï¿½
 									case 122: 
 										
 										int count=0;
@@ -310,9 +310,9 @@ public class GameForm extends JFrame {
 												i=i2;
 												j=j2;
 											}else{
-												ClientService.getClientService().setGameData(i, j, currenttype);//½«±»Ñ¡ÖĞµÄÆå×ÓµÄÔ­À´µÄ×ø±êÖÃÎª0
-												panelDraw.repaint();//ÖØ»­ÆåÅÌ
-												if (!isMeachine) {//ÅĞ¶ÏÊÇ·ñÊÇÈË»úÄ£Ê½
+												ClientService.getClientService().setGameData(i, j, currenttype);//ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½Ğµï¿½ï¿½ï¿½ï¿½Óµï¿½Ô­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª0
+												panelDraw.repaint();//ï¿½Ø»ï¿½ï¿½ï¿½ï¿½ï¿½
+												if (!isMeachine) {//ï¿½Ğ¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ë»ï¿½Ä£Ê½
 													String str="SETPOS|"+gametableIndex+"|"+side+"|"+i+"|"+j+"|"+ChessType;
 													ClientService.getClientService().getClientGame().sendMSG(str);
 												}
@@ -337,9 +337,9 @@ public class GameForm extends JFrame {
 												i=i2;
 												j=j2;
 											}else{
-												ClientService.getClientService().setGameData(i, j, currenttype);//½«±»Ñ¡ÖĞµÄÆå×ÓµÄÔ­À´µÄ×ø±êÖÃÎª0
-												panelDraw.repaint();//ÖØ»­ÆåÅÌ
-												if (!isMeachine) {//ÅĞ¶ÏÊÇ·ñÊÇÈË»úÄ£Ê½
+												ClientService.getClientService().setGameData(i, j, currenttype);//ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½Ğµï¿½ï¿½ï¿½ï¿½Óµï¿½Ô­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª0
+												panelDraw.repaint();//ï¿½Ø»ï¿½ï¿½ï¿½ï¿½ï¿½
+												if (!isMeachine) {//ï¿½Ğ¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ë»ï¿½Ä£Ê½
 													String str="SETPOS|"+gametableIndex+"|"+side+"|"+i+"|"+j+"|"+ChessType;
 													ClientService.getClientService().getClientGame().sendMSG(str);
 												}
@@ -351,14 +351,14 @@ public class GameForm extends JFrame {
 										///	i=i2;
 										//	j=j2;
 										//}else{
-										//	ClientService.getClientService().setGameData(i, j, currenttype);//½«±»Ñ¡ÖĞµÄÆå×ÓµÄÔ­À´µÄ×ø±êÖÃÎª0
-										//	panelDraw.repaint();//ÖØ»­ÆåÅÌ
+										//	ClientService.getClientService().setGameData(i, j, currenttype);//ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½Ğµï¿½ï¿½ï¿½ï¿½Óµï¿½Ô­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª0
+										//	panelDraw.repaint();//ï¿½Ø»ï¿½ï¿½ï¿½ï¿½ï¿½
 										//	String str="SETPOS|"+gametableIndex+"|"+side+"|"+i+"|"+j+"|"+ChessType;
 										//	ClientService.getClientService().getClientGame().sendMSG(str);
 										//	return;
 										//}
 										break;
-									case 131://ÅĞ¶ÏÜ‡×ßµÄÊÇ·ñºÏ·¨ Ò»²½Ö»ÄÜÔÚÒ»¸ö·½ÏòÉÏÒÆ¶¯
+									case 131://ï¿½Ğ¶ï¿½Ü‡ï¿½ßµï¿½ï¿½Ç·ï¿½Ï·ï¿½ Ò»ï¿½ï¿½Ö»ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½
 									case 132:
 										int count1=0;
 										int data2[][]=ClientService.getClientService().getGameData();
@@ -380,9 +380,9 @@ public class GameForm extends JFrame {
 												i=i2;
 												j=j2;
 											}else{
-												ClientService.getClientService().setGameData(i, j, currenttype);//½«±»Ñ¡ÖĞµÄÆå×ÓµÄÔ­À´µÄ×ø±êÖÃÎª0
-												panelDraw.repaint();//ÖØ»­ÆåÅÌ
-												if (!isMeachine) {//ÅĞ¶ÏÊÇ·ñÊÇÈË»úÄ£Ê½
+												ClientService.getClientService().setGameData(i, j, currenttype);//ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½Ğµï¿½ï¿½ï¿½ï¿½Óµï¿½Ô­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª0
+												panelDraw.repaint();//ï¿½Ø»ï¿½ï¿½ï¿½ï¿½ï¿½
+												if (!isMeachine) {//ï¿½Ğ¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ë»ï¿½Ä£Ê½
 													String str="SETPOS|"+gametableIndex+"|"+side+"|"+i+"|"+j+"|"+ChessType;
 													ClientService.getClientService().getClientGame().sendMSG(str);
 												}
@@ -407,9 +407,9 @@ public class GameForm extends JFrame {
 												i=i2;
 												j=j2;
 											}else{
-												ClientService.getClientService().setGameData(i, j, currenttype);//½«±»Ñ¡ÖĞµÄÆå×ÓµÄÔ­À´µÄ×ø±êÖÃÎª0
-												panelDraw.repaint();//ÖØ»­ÆåÅÌ
-												if (!isMeachine) {//ÅĞ¶ÏÊÇ·ñÊÇÈË»úÄ£Ê½
+												ClientService.getClientService().setGameData(i, j, currenttype);//ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½Ğµï¿½ï¿½ï¿½ï¿½Óµï¿½Ô­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª0
+												panelDraw.repaint();//ï¿½Ø»ï¿½ï¿½ï¿½ï¿½ï¿½
+												if (!isMeachine) {//ï¿½Ğ¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ë»ï¿½Ä£Ê½
 													String str="SETPOS|"+gametableIndex+"|"+side+"|"+i+"|"+j+"|"+ChessType;
 													ClientService.getClientService().getClientGame().sendMSG(str);
 												}
@@ -418,7 +418,7 @@ public class GameForm extends JFrame {
 											}
 										}										
 										break;
-									case 141://ÅĞ¶Ï  Âí  ×ßµÄÊÇ·ñÕıÈ·£¬ÂíÖ»ÄÜ×ßÈÕ×Ö    
+									case 141://ï¿½Ğ¶ï¿½  ï¿½ï¿½  ï¿½ßµï¿½ï¿½Ç·ï¿½ï¿½ï¿½È·ï¿½ï¿½ï¿½ï¿½Ö»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½    
 									case 142:
 										int data3[][]=ClientService.getClientService().getGameData();
 										int chess3=-1;
@@ -445,9 +445,9 @@ public class GameForm extends JFrame {
 												j=j2;
 											
 											}else{
-												ClientService.getClientService().setGameData(i, j, currenttype);//½«±»Ñ¡ÖĞµÄÆå×ÓµÄÔ­À´µÄ×ø±êÖÃÎª0
-												panelDraw.repaint();//ÖØ»­ÆåÅÌ
-												if (!isMeachine) {//ÅĞ¶ÏÊÇ·ñÊÇÈË»úÄ£Ê½
+												ClientService.getClientService().setGameData(i, j, currenttype);//ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½Ğµï¿½ï¿½ï¿½ï¿½Óµï¿½Ô­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª0
+												panelDraw.repaint();//ï¿½Ø»ï¿½ï¿½ï¿½ï¿½ï¿½
+												if (!isMeachine) {//ï¿½Ğ¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ë»ï¿½Ä£Ê½
 													String str="SETPOS|"+gametableIndex+"|"+side+"|"+i+"|"+j+"|"+ChessType;
 													ClientService.getClientService().getClientGame().sendMSG(str);
 												}
@@ -456,9 +456,9 @@ public class GameForm extends JFrame {
 											}
 											
 										}else{
-											ClientService.getClientService().setGameData(i, j, currenttype);//½«±»Ñ¡ÖĞµÄÆå×ÓµÄÔ­À´µÄ×ø±êÖÃÎª0
-											panelDraw.repaint();//ÖØ»­ÆåÅÌ
-											if (!isMeachine) {//ÅĞ¶ÏÊÇ·ñÊÇÈË»úÄ£Ê½
+											ClientService.getClientService().setGameData(i, j, currenttype);//ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½Ğµï¿½ï¿½ï¿½ï¿½Óµï¿½Ô­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª0
+											panelDraw.repaint();//ï¿½Ø»ï¿½ï¿½ï¿½ï¿½ï¿½
+											if (!isMeachine) {//ï¿½Ğ¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ë»ï¿½Ä£Ê½
 												String str="SETPOS|"+gametableIndex+"|"+side+"|"+i+"|"+j+"|"+ChessType;
 												ClientService.getClientService().getClientGame().sendMSG(str);
 													
@@ -466,18 +466,18 @@ public class GameForm extends JFrame {
 											return;
 										}
 										break;
-									case 151://ÅĞ¶Ï Ïó   ×ßµÄÊÇ·ñÕıÈ·
+									case 151://ï¿½Ğ¶ï¿½ ï¿½ï¿½   ï¿½ßµï¿½ï¿½Ç·ï¿½ï¿½ï¿½È·
 									case 152:
 										int data4[][]=ClientService.getClientService().getGameData();
-										int chess=data4[(i+i2)/2][(j+j2)/2];//ÅĞ¶ÏÊÇ·ñÈûÏóÑÛ
+										int chess=data4[(i+i2)/2][(j+j2)/2];//ï¿½Ğ¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 										if(i2==i-2&&j2==j-2&&i-2>=0&&j-2>=0||i2==i+2&&j2==j-2&&i+2<=8&&j-2>=0||i2==i+2&&j2==j+2&&i+2<=8&&j+2<=4||i2==i-2&&j2==j+2&&i-2>=0&&j+2<=4){
 											if(chess==0&&(data4[i2][j2]>200||data4[i2][j2]==0)){
-												i=i2;//Èç¹ûÎ»ÖÃºÏ·¨½«µÚ¶ş´ÎÑ¡ÖĞµÄÖµ¸³¸øi 
-												j=j2; //Èç¹ûÎ»ÖÃºÏ·¨½«µÚ¶ş´ÎÑ¡ÖĞµÄÖµ¸³¸øj
+												i=i2;//ï¿½ï¿½ï¿½Î»ï¿½ÃºÏ·ï¿½ï¿½ï¿½ï¿½Ú¶ï¿½ï¿½ï¿½Ñ¡ï¿½Ğµï¿½Öµï¿½ï¿½ï¿½ï¿½i 
+												j=j2; //ï¿½ï¿½ï¿½Î»ï¿½ÃºÏ·ï¿½ï¿½ï¿½ï¿½Ú¶ï¿½ï¿½ï¿½Ñ¡ï¿½Ğµï¿½Öµï¿½ï¿½ï¿½ï¿½j
 											}else{
-												ClientService.getClientService().setGameData(i, j, currenttype);//½«±»Ñ¡ÖĞµÄÆå×ÓµÄÔ­À´µÄ×ø±êÖÃÎª0
-												panelDraw.repaint();//ÖØ»­ÆåÅÌ
-												if (!isMeachine) {//ÅĞ¶ÏÊÇ·ñÊÇÈË»úÄ£Ê½
+												ClientService.getClientService().setGameData(i, j, currenttype);//ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½Ğµï¿½ï¿½ï¿½ï¿½Óµï¿½Ô­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª0
+												panelDraw.repaint();//ï¿½Ø»ï¿½ï¿½ï¿½ï¿½ï¿½
+												if (!isMeachine) {//ï¿½Ğ¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ë»ï¿½Ä£Ê½
 													String str="SETPOS|"+gametableIndex+"|"+side+"|"+i+"|"+j+"|"+ChessType;
 													ClientService.getClientService().getClientGame().sendMSG(str);
 														
@@ -486,9 +486,9 @@ public class GameForm extends JFrame {
 											}
 											
 										}else{
-											ClientService.getClientService().setGameData(i, j, currenttype);//½«±»Ñ¡ÖĞµÄÆå×ÓµÄÔ­À´µÄ×ø±êÖÃÎª0
-											panelDraw.repaint();//ÖØ»­ÆåÅÌ
-											if (!isMeachine) {//ÅĞ¶ÏÊÇ·ñÊÇÈË»úÄ£Ê½
+											ClientService.getClientService().setGameData(i, j, currenttype);//ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½Ğµï¿½ï¿½ï¿½ï¿½Óµï¿½Ô­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª0
+											panelDraw.repaint();//ï¿½Ø»ï¿½ï¿½ï¿½ï¿½ï¿½
+											if (!isMeachine) {//ï¿½Ğ¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ë»ï¿½Ä£Ê½
 												String str="SETPOS|"+gametableIndex+"|"+side+"|"+i+"|"+j+"|"+ChessType;
 												ClientService.getClientService().getClientGame().sendMSG(str);
 											
@@ -496,16 +496,16 @@ public class GameForm extends JFrame {
 											return;
 										}
 										break;
-									case 161://ÅĞ¶Ï  Ê¿  ×ßµÄÊÇ·ñÕıÈ·
+									case 161://ï¿½Ğ¶ï¿½  Ê¿  ï¿½ßµï¿½ï¿½Ç·ï¿½ï¿½ï¿½È·
 									case 162:
 										int data5[][]=ClientService.getClientService().getGameData();
 										if((i2==i-1&&j2==j-1&&j-1>=0&&i-1>=3||i2==i+1&&j2==j-1&&i+1<=5&&j-1>=0||i2==i+1&&j2==j+1&&i+1<=5&&j+1<=2||i2==i-1&&j2==j+1&&i-1>=3&&j+1<=2)&&(data5[i2][j2]>200||data5[i2][j2]==0)){
-											i=i2;///Èç¹ûÎ»ÖÃºÏ·¨½«µÚ¶ş´ÎÑ¡ÖĞµÄÖµ¸³¸øi  
-											j=j2;//Èç¹ûÎ»ÖÃºÏ·¨½«µÚ¶ş´ÎÑ¡ÖĞµÄÖµ¸³¸øj
+											i=i2;///ï¿½ï¿½ï¿½Î»ï¿½ÃºÏ·ï¿½ï¿½ï¿½ï¿½Ú¶ï¿½ï¿½ï¿½Ñ¡ï¿½Ğµï¿½Öµï¿½ï¿½ï¿½ï¿½i  
+											j=j2;//ï¿½ï¿½ï¿½Î»ï¿½ÃºÏ·ï¿½ï¿½ï¿½ï¿½Ú¶ï¿½ï¿½ï¿½Ñ¡ï¿½Ğµï¿½Öµï¿½ï¿½ï¿½ï¿½j
 										}else{
-											ClientService.getClientService().setGameData(i, j, currenttype);//½«±»Ñ¡ÖĞµÄÆå×ÓµÄÔ­À´µÄ×ø±êÖÃÎª0
-											panelDraw.repaint();//ÖØ»­ÆåÅÌ
-											if (!isMeachine) {//ÅĞ¶ÏÊÇ·ñÊÇÈË»úÄ£Ê½
+											ClientService.getClientService().setGameData(i, j, currenttype);//ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½Ğµï¿½ï¿½ï¿½ï¿½Óµï¿½Ô­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª0
+											panelDraw.repaint();//ï¿½Ø»ï¿½ï¿½ï¿½ï¿½ï¿½
+											if (!isMeachine) {//ï¿½Ğ¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ë»ï¿½Ä£Ê½
 												String str="SETPOS|"+gametableIndex+"|"+side+"|"+i+"|"+j+"|"+ChessType;
 												ClientService.getClientService().getClientGame().sendMSG(str);
 											
@@ -513,7 +513,7 @@ public class GameForm extends JFrame {
 											return;
 										}
 										break;
-									case 170://ÅĞ¶Ï½«×ßµÄÊÇ·ñÕıÈ·
+									case 170://ï¿½Ğ¶Ï½ï¿½ï¿½ßµï¿½ï¿½Ç·ï¿½ï¿½ï¿½È·
 										int data6[][]=ClientService.getClientService().getGameData();
 										int count4=0;
 										if(j2>j){
@@ -521,12 +521,12 @@ public class GameForm extends JFrame {
 												if(data6[i][j1]!=0){
 													count4++;
 													if((count4==1&&data6[i][j1]==270||j2<=2)){
-														i=i2;//Èç¹ûÎ»ÖÃºÏ·¨½«µÚ¶ş´ÎÑ¡ÖĞµÄÖµ¸³¸øi  
-														j=j2;//Èç¹ûÎ»ÖÃºÏ·¨½«µÚ¶ş´ÎÑ¡ÖĞµÄÖµ¸³¸øj
+														i=i2;//ï¿½ï¿½ï¿½Î»ï¿½ÃºÏ·ï¿½ï¿½ï¿½ï¿½Ú¶ï¿½ï¿½ï¿½Ñ¡ï¿½Ğµï¿½Öµï¿½ï¿½ï¿½ï¿½i  
+														j=j2;//ï¿½ï¿½ï¿½Î»ï¿½ÃºÏ·ï¿½ï¿½ï¿½ï¿½Ú¶ï¿½ï¿½ï¿½Ñ¡ï¿½Ğµï¿½Öµï¿½ï¿½ï¿½ï¿½j
 													}else{
-														ClientService.getClientService().setGameData(i, j, currenttype);//½«±»Ñ¡ÖĞµÄÆå×ÓµÄÔ­À´µÄ×ø±êÖÃÎª0
-														panelDraw.repaint();//ÖØ»­ÆåÅÌ
-														if (!isMeachine) {//ÅĞ¶ÏÊÇ·ñÊÇÈË»úÄ£Ê½
+														ClientService.getClientService().setGameData(i, j, currenttype);//ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½Ğµï¿½ï¿½ï¿½ï¿½Óµï¿½Ô­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª0
+														panelDraw.repaint();//ï¿½Ø»ï¿½ï¿½ï¿½ï¿½ï¿½
+														if (!isMeachine) {//ï¿½Ğ¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ë»ï¿½Ä£Ê½
 															String str="SETPOS|"+gametableIndex+"|"+side+"|"+i+"|"+j+"|"+ChessType;
 															ClientService.getClientService().getClientGame().sendMSG(str);
 														
@@ -538,12 +538,12 @@ public class GameForm extends JFrame {
 										}
 										if((i2==i&&j2==j+1&&j+1<=2 ||i2==i+1&&j2==j&&i+1<=5||i2==i-1&&j2==j&&i-1>=3||i2==i&&j2==j-1&&j-1>=0)&&(data6[i2][j2]>200||data6[i2][j2]==0)){
 											
-											i=i2;//Èç¹ûÎ»ÖÃºÏ·¨½«µÚ¶ş´ÎÑ¡ÖĞµÄÖµ¸³¸øi  
-											j=j2;//Èç¹ûÎ»ÖÃºÏ·¨½«µÚ¶ş´ÎÑ¡ÖĞµÄÖµ¸³¸øj
+											i=i2;//ï¿½ï¿½ï¿½Î»ï¿½ÃºÏ·ï¿½ï¿½ï¿½ï¿½Ú¶ï¿½ï¿½ï¿½Ñ¡ï¿½Ğµï¿½Öµï¿½ï¿½ï¿½ï¿½i  
+											j=j2;//ï¿½ï¿½ï¿½Î»ï¿½ÃºÏ·ï¿½ï¿½ï¿½ï¿½Ú¶ï¿½ï¿½ï¿½Ñ¡ï¿½Ğµï¿½Öµï¿½ï¿½ï¿½ï¿½j
 										}else {
-											ClientService.getClientService().setGameData(i, j, currenttype);//½«±»Ñ¡ÖĞµÄÆå×ÓµÄÔ­À´µÄ×ø±êÖÃÎª0
-											panelDraw.repaint();//ÖØ»­ÆåÅÌ
-											if(!isMeachine){//ÅĞ¶ÏÊÇ·ñÊÇÈË»úÄ£Ê½
+											ClientService.getClientService().setGameData(i, j, currenttype);//ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½Ğµï¿½ï¿½ï¿½ï¿½Óµï¿½Ô­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª0
+											panelDraw.repaint();//ï¿½Ø»ï¿½ï¿½ï¿½ï¿½ï¿½
+											if(!isMeachine){//ï¿½Ğ¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ë»ï¿½Ä£Ê½
 												String str="SETPOS|"+gametableIndex+"|"+side+"|"+i+"|"+j+"|"+ChessType;
 												ClientService.getClientService().getClientGame().sendMSG(str);
 											}
@@ -554,45 +554,45 @@ public class GameForm extends JFrame {
 									default:
 										break;
 								} 
-							//¸üĞÂÓÎÏ·Êı¾İ
-							ClientService.getClientService().setGameData(i, j, ChessType);//ÉèÖÃÆå×ÓµÄÎ»ÖÃ
-							panelDraw.repaint();//ÖØĞÂ»­Í¼
+							//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½
+							ClientService.getClientService().setGameData(i, j, ChessType);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Óµï¿½Î»ï¿½ï¿½
+							panelDraw.repaint();//ï¿½ï¿½ï¿½Â»ï¿½Í¼
 							if(count%2==0){
 								isClick=false;
-							//	count++;//Ö»ÄÜµÈ´ı¶Ô·½³ö×Ó
+							//	count++;//Ö»ï¿½ÜµÈ´ï¿½ï¿½Ô·ï¿½ï¿½ï¿½ï¿½ï¿½
 							}
 							 
-							// ·¢ËÍ¸ñÊ½£ºSETPOS|×ÀºÅ|×ùÎ»ºÅ|ĞĞ|ÁĞ|ÑÕÉ«	
-							if (!isMeachine) {//ÅĞ¶ÏÊÇ·ñÊÇÈË»úÄ£Ê½
+							// ï¿½ï¿½ï¿½Í¸ï¿½Ê½ï¿½ï¿½SETPOS|ï¿½ï¿½ï¿½ï¿½|ï¿½ï¿½Î»ï¿½ï¿½|ï¿½ï¿½|ï¿½ï¿½|ï¿½ï¿½É«	
+							if (!isMeachine) {//ï¿½Ğ¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ë»ï¿½Ä£Ê½
 								String  str="SETPOS|"+gametableIndex+"|"+side+"|"+i+"|"+j+"|"+ChessType;
 								ClientService.getClientService().getClientGame().sendMSG(str);
 						 
 							}
 						}
-					}else if(side==1&&currenttype>170&&count%2==0){//·ñÔò¾ÍÊÇºì·½ 
+					}else if(side==1&&currenttype>170&&count%2==0){//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Çºì·½ 
 						  
 							int i2=Math.round((x-40)/60f);
 							int j2=Math.round((y-45)/60f);
-							if(i2>9||i2<0||j2>10||j2<0){return;}//Ñ¡ÔñÇøÓò³¬³ö·¶Î§ ¾Í·µ»ØÖØĞÂÑ¡Ôñ
-							System.out.println("ºì·½ Ñ¡ÔñÂä×ÓÎ»ÖÃ£º"+currenttype+" "+j2+" "+i2 );
-							txtLog.append("ºì·½ Ñ¡ÔñÂä×ÓÎ»ÖÃ£º"+currenttype+"  "+j2+" "+i2+"\r\n");
+							if(i2>9||i2<0||j2>10||j2<0){return;}//Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½ò³¬³ï¿½ï¿½ï¿½Î§ ï¿½Í·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½
+							System.out.println("çº¢æ–¹ å½“å‰ä½ç½®"+currenttype+" "+j2+" "+i2 );
+							txtLog.append("çº¢æ–¹ å½“å‰ä½ç½®"+currenttype+"  "+j2+" "+i2+"\r\n");
 							int chess1,chess2;
 							int chessdata[][]=ClientService.getClientService().getGameData();
 							chess1=chessdata[i][j]+10/100;
 							chess2=chessdata[i2][j2]+10/100;
-							if(i2==i&&j2==j||i2<0||i2>8||j2<0||j2>9||chess1==chess2){//Èç¹ûÑ¡ÔñµÄ²»ÊÇÔ­Î»ÖÃ£¬¾Í½«Ô­Î»ÖÃÖÃÎª0
-								ClientService.getClientService().setGameData(i, j, currenttype);//½«Ô­À´ºì·½Æå×ÓÎªÎ»ÖÃÖÃÎª0
-								panelDraw.repaint();//ÖØ»­ÆåÅÌ
-								if (!isMeachine) {//ÅĞ¶ÏÊÇ·ñÊÇÈË»úÄ£Ê½
+							if(i2==i&&j2==j||i2<0||i2>8||j2<0||j2>9||chess1==chess2){//ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½Ä²ï¿½ï¿½ï¿½Ô­Î»ï¿½Ã£ï¿½ï¿½Í½ï¿½Ô­Î»ï¿½ï¿½ï¿½ï¿½Îª0
+								ClientService.getClientService().setGameData(i, j, currenttype);//ï¿½ï¿½Ô­ï¿½ï¿½ï¿½ì·½ï¿½ï¿½ï¿½ï¿½ÎªÎ»ï¿½ï¿½ï¿½ï¿½Îª0
+								panelDraw.repaint();//ï¿½Ø»ï¿½ï¿½ï¿½ï¿½ï¿½
+								if (!isMeachine) {//ï¿½Ğ¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ë»ï¿½Ä£Ê½
 									String str="SETPOS|"+gametableIndex+"|"+side+"|"+i+"|"+j+"|"+ChessType;
 									ClientService.getClientService().getClientGame().sendMSG(str);
 								
 								}
 								return;
 							}else{
-								ClientService.getClientService().setGameData(i, j, 0);//½«Ô­À´ºì·½Æå×ÓÎªÎ»ÖÃÖÃÎª0
-								panelDraw.repaint();//ÖØ»­ÆåÅÌ
-								if (!isMeachine) {//ÅĞ¶ÏÊÇ·ñÊÇÈË»úÄ£Ê½
+								ClientService.getClientService().setGameData(i, j, 0);//ï¿½ï¿½Ô­ï¿½ï¿½ï¿½ì·½ï¿½ï¿½ï¿½ï¿½ÎªÎ»ï¿½ï¿½ï¿½ï¿½Îª0
+								panelDraw.repaint();//ï¿½Ø»ï¿½ï¿½ï¿½ï¿½ï¿½
+								if (!isMeachine) {//ï¿½Ğ¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ë»ï¿½Ä£Ê½
 									String str="SETPOS|"+gametableIndex+"|"+side+"|"+i+"|"+j+"|"+0;
 									ClientService.getClientService().getClientGame().sendMSG(str); 
 								}
@@ -601,26 +601,26 @@ public class GameForm extends JFrame {
 							if(i2>=0&&i2<9&&j2>=0&&j2<10){
 								 
 								switch (ChessType) {
-									case 211:	//ÅĞ¶Ï  ×ä µÄÒÆ¶¯Î»ÖÃÊÇ·ñÎª 1²½
+									case 211:	//ï¿½Ğ¶ï¿½  ï¿½ï¿½ ï¿½ï¿½ï¿½Æ¶ï¿½Î»ï¿½ï¿½ï¿½Ç·ï¿½Îª 1ï¿½ï¿½
 									case 212:
 									case 213:
 									case 214:
 									case 215:
 										int data[][]=ClientService.getClientService().getGameData();
 										if(((i2==i+1&&j==j2&&i+1<=8&&j<=4&&i>=0)||(i2==i&&j2==j-1&&j-1>=0&&j<=6&&i>=0)||(i2==i-1&&j2==j&&i-1>=0&&j<=4&&i>=0))&&data[i2][j2]<200){
-											i=i2;//Èç¹ûÎ»ÖÃºÏ·¨½«µÚ¶ş´ÎÑ¡ÖĞµÄÖµ¸³¸øi  
-											j=j2;//Èç¹ûÎ»ÖÃºÏ·¨½«µÚ¶ş´ÎÑ¡ÖĞµÄÖµ¸³¸øj
+											i=i2;//ï¿½ï¿½ï¿½Î»ï¿½ÃºÏ·ï¿½ï¿½ï¿½ï¿½Ú¶ï¿½ï¿½ï¿½Ñ¡ï¿½Ğµï¿½Öµï¿½ï¿½ï¿½ï¿½i  
+											j=j2;//ï¿½ï¿½ï¿½Î»ï¿½ÃºÏ·ï¿½ï¿½ï¿½ï¿½Ú¶ï¿½ï¿½ï¿½Ñ¡ï¿½Ğµï¿½Öµï¿½ï¿½ï¿½ï¿½j
 										}else {
-											ClientService.getClientService().setGameData(i, j, currenttype);//½«±»Ñ¡ÖĞµÄÆå×ÓµÄÔ­À´µÄ×ø±êÖÃÎª0
-											panelDraw.repaint();//ÖØ»­ÆåÅÌ
-											if (!isMeachine) {//ÅĞ¶ÏÊÇ·ñÊÇÈË»úÄ£Ê½
+											ClientService.getClientService().setGameData(i, j, currenttype);//ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½Ğµï¿½ï¿½ï¿½ï¿½Óµï¿½Ô­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª0
+											panelDraw.repaint();//ï¿½Ø»ï¿½ï¿½ï¿½ï¿½ï¿½
+											if (!isMeachine) {//ï¿½Ğ¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ë»ï¿½Ä£Ê½
 												String str="SETPOS|"+gametableIndex+"|"+side+"|"+i+"|"+j+"|"+ChessType;
 												ClientService.getClientService().getClientGame().sendMSG(str);
 											}
 											return;
 										}
 										break;
-									case 221://ÅĞ¶Ï  ÅÚ  ×ßµÄÊÇ·ñºÏ·¨ ²»ÄÜ¹ÕÍä
+									case 221://ï¿½Ğ¶ï¿½  ï¿½ï¿½  ï¿½ßµï¿½ï¿½Ç·ï¿½Ï·ï¿½ ï¿½ï¿½ï¿½Ü¹ï¿½ï¿½ï¿½
 									case 222: 
 										int count=0;
 										int data1[][]=ClientService.getClientService().getGameData();
@@ -639,12 +639,12 @@ public class GameForm extends JFrame {
 												}
 											}
 											if((count==0||count==2)&&data1[i2][j2]<200){
-												i=i2;//Èç¹ûÎ»ÖÃºÏ·¨½«µÚ¶ş´ÎÑ¡ÖĞµÄÖµ¸³¸øi  
-												j=j2;//Èç¹ûÎ»ÖÃºÏ·¨½«µÚ¶ş´ÎÑ¡ÖĞµÄÖµ¸³¸øj
+												i=i2;//ï¿½ï¿½ï¿½Î»ï¿½ÃºÏ·ï¿½ï¿½ï¿½ï¿½Ú¶ï¿½ï¿½ï¿½Ñ¡ï¿½Ğµï¿½Öµï¿½ï¿½ï¿½ï¿½i  
+												j=j2;//ï¿½ï¿½ï¿½Î»ï¿½ÃºÏ·ï¿½ï¿½ï¿½ï¿½Ú¶ï¿½ï¿½ï¿½Ñ¡ï¿½Ğµï¿½Öµï¿½ï¿½ï¿½ï¿½j
 											}else{
-												ClientService.getClientService().setGameData(i, j, currenttype);//½«±»Ñ¡ÖĞµÄÆå×ÓµÄÔ­À´µÄ×ø±êÖÃÎª0
-												panelDraw.repaint();//ÖØ»­ÆåÅÌ
-												if (!isMeachine) {//ÅĞ¶ÏÊÇ·ñÊÇÈË»úÄ£Ê½
+												ClientService.getClientService().setGameData(i, j, currenttype);//ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½Ğµï¿½ï¿½ï¿½ï¿½Óµï¿½Ô­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª0
+												panelDraw.repaint();//ï¿½Ø»ï¿½ï¿½ï¿½ï¿½ï¿½
+												if (!isMeachine) {//ï¿½Ğ¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ë»ï¿½Ä£Ê½
 													String str="SETPOS|"+gametableIndex+"|"+side+"|"+i+"|"+j+"|"+ChessType;
 													ClientService.getClientService().getClientGame().sendMSG(str);
 												
@@ -666,12 +666,12 @@ public class GameForm extends JFrame {
 												}
 											}
 											if((count==0||count==2)&&data1[i2][j2]<200){
-												i=i2;//Èç¹ûÎ»ÖÃºÏ·¨½«µÚ¶ş´ÎÑ¡ÖĞµÄÖµ¸³¸øi 
-												j=j2; //Èç¹ûÎ»ÖÃºÏ·¨½«µÚ¶ş´ÎÑ¡ÖĞµÄÖµ¸³¸øj
+												i=i2;//ï¿½ï¿½ï¿½Î»ï¿½ÃºÏ·ï¿½ï¿½ï¿½ï¿½Ú¶ï¿½ï¿½ï¿½Ñ¡ï¿½Ğµï¿½Öµï¿½ï¿½ï¿½ï¿½i 
+												j=j2; //ï¿½ï¿½ï¿½Î»ï¿½ÃºÏ·ï¿½ï¿½ï¿½ï¿½Ú¶ï¿½ï¿½ï¿½Ñ¡ï¿½Ğµï¿½Öµï¿½ï¿½ï¿½ï¿½j
 											}else{
-												ClientService.getClientService().setGameData(i, j, currenttype);//½«±»Ñ¡ÖĞµÄÆå×ÓµÄÔ­À´µÄ×ø±êÖÃÎª0
-												panelDraw.repaint();//ÖØ»­ÆåÅÌ
-												if (!isMeachine) {//ÅĞ¶ÏÊÇ·ñÊÇÈË»úÄ£Ê½
+												ClientService.getClientService().setGameData(i, j, currenttype);//ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½Ğµï¿½ï¿½ï¿½ï¿½Óµï¿½Ô­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª0
+												panelDraw.repaint();//ï¿½Ø»ï¿½ï¿½ï¿½ï¿½ï¿½
+												if (!isMeachine) {//ï¿½Ğ¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ë»ï¿½Ä£Ê½
 													String str="SETPOS|"+gametableIndex+"|"+side+"|"+i+"|"+j+"|"+ChessType;
 													ClientService.getClientService().getClientGame().sendMSG(str);
 												}
@@ -682,14 +682,14 @@ public class GameForm extends JFrame {
 										//	i=i2;
 										//	j=j2;
 										//}else {
-										//	ClientService.getClientService().setGameData(i, j, currenttype);//½«±»Ñ¡ÖĞµÄÆå×ÓµÄÔ­À´µÄ×ø±êÖÃÎª0
-										//	panelDraw.repaint();//ÖØ»­ÆåÅÌ
+										//	ClientService.getClientService().setGameData(i, j, currenttype);//ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½Ğµï¿½ï¿½ï¿½ï¿½Óµï¿½Ô­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª0
+										//	panelDraw.repaint();//ï¿½Ø»ï¿½ï¿½ï¿½ï¿½ï¿½
 										//	String str="SETPOS|"+gametableIndex+"|"+side+"|"+i+"|"+j+"|"+ChessType;
 										//	ClientService.getClientService().getClientGame().sendMSG(str);
 										//	return;
 										//}
 										break;
-									case 231://ÅĞ¶ÏÜ‡×ßµÄÊÇ·ñºÏ·¨ Ò»²½Ö»ÄÜÔÚÒ»¸ö·½ÏòÉÏÒÆ¶¯
+									case 231://ï¿½Ğ¶ï¿½Ü‡ï¿½ßµï¿½ï¿½Ç·ï¿½Ï·ï¿½ Ò»ï¿½ï¿½Ö»ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½
 									case 232:
 										int count1=0;
 										int data2[][]=ClientService.getClientService().getGameData();
@@ -708,12 +708,12 @@ public class GameForm extends JFrame {
 												}
 											}
 											if((count1==0)&&data2[i2][j2]<200){
-												i=i2;//Èç¹ûÎ»ÖÃºÏ·¨½«µÚ¶ş´ÎÑ¡ÖĞµÄÖµ¸³¸øi  
-												j=j2;//Èç¹ûÎ»ÖÃºÏ·¨½«µÚ¶ş´ÎÑ¡ÖĞµÄÖµ¸³¸øj
+												i=i2;//ï¿½ï¿½ï¿½Î»ï¿½ÃºÏ·ï¿½ï¿½ï¿½ï¿½Ú¶ï¿½ï¿½ï¿½Ñ¡ï¿½Ğµï¿½Öµï¿½ï¿½ï¿½ï¿½i  
+												j=j2;//ï¿½ï¿½ï¿½Î»ï¿½ÃºÏ·ï¿½ï¿½ï¿½ï¿½Ú¶ï¿½ï¿½ï¿½Ñ¡ï¿½Ğµï¿½Öµï¿½ï¿½ï¿½ï¿½j
 											}else{
-												ClientService.getClientService().setGameData(i, j, currenttype);//½«±»Ñ¡ÖĞµÄÆå×ÓµÄÔ­À´µÄ×ø±êÖÃÎª0
-												panelDraw.repaint();//ÖØ»­ÆåÅÌ
-												if (!isMeachine) {//ÅĞ¶ÏÊÇ·ñÊÇÈË»úÄ£Ê½
+												ClientService.getClientService().setGameData(i, j, currenttype);//ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½Ğµï¿½ï¿½ï¿½ï¿½Óµï¿½Ô­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª0
+												panelDraw.repaint();//ï¿½Ø»ï¿½ï¿½ï¿½ï¿½ï¿½
+												if (!isMeachine) {//ï¿½Ğ¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ë»ï¿½Ä£Ê½
 													String str="SETPOS|"+gametableIndex+"|"+side+"|"+i+"|"+j+"|"+ChessType;
 													ClientService.getClientService().getClientGame().sendMSG(str);
 												
@@ -735,12 +735,12 @@ public class GameForm extends JFrame {
 												}
 											}
 											if((count1==0)&&data2[i2][j2]<200){
-												i=i2;//Èç¹ûÎ»ÖÃºÏ·¨½«µÚ¶ş´ÎÑ¡ÖĞµÄÖµ¸³¸øi 
-												j=j2; //Èç¹ûÎ»ÖÃºÏ·¨½«µÚ¶ş´ÎÑ¡ÖĞµÄÖµ¸³¸øj
+												i=i2;//ï¿½ï¿½ï¿½Î»ï¿½ÃºÏ·ï¿½ï¿½ï¿½ï¿½Ú¶ï¿½ï¿½ï¿½Ñ¡ï¿½Ğµï¿½Öµï¿½ï¿½ï¿½ï¿½i 
+												j=j2; //ï¿½ï¿½ï¿½Î»ï¿½ÃºÏ·ï¿½ï¿½ï¿½ï¿½Ú¶ï¿½ï¿½ï¿½Ñ¡ï¿½Ğµï¿½Öµï¿½ï¿½ï¿½ï¿½j
 											}else{
-												ClientService.getClientService().setGameData(i, j, currenttype);//½«±»Ñ¡ÖĞµÄÆå×ÓµÄÔ­À´µÄ×ø±êÖÃÎª0
-												panelDraw.repaint();//ÖØ»­ÆåÅÌ
-												if (!isMeachine) {//ÅĞ¶ÏÊÇ·ñÊÇÈË»úÄ£Ê½
+												ClientService.getClientService().setGameData(i, j, currenttype);//ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½Ğµï¿½ï¿½ï¿½ï¿½Óµï¿½Ô­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª0
+												panelDraw.repaint();//ï¿½Ø»ï¿½ï¿½ï¿½ï¿½ï¿½
+												if (!isMeachine) {//ï¿½Ğ¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ë»ï¿½Ä£Ê½
 													String str="SETPOS|"+gametableIndex+"|"+side+"|"+i+"|"+j+"|"+ChessType;
 													ClientService.getClientService().getClientGame().sendMSG(str);
 												}
@@ -751,14 +751,14 @@ public class GameForm extends JFrame {
 									//		i=i2;
 									//		j=j2;
 									//	}else{
-									//		ClientService.getClientService().setGameData(i, j, currenttype);//½«±»Ñ¡ÖĞµÄÆå×ÓµÄÔ­À´µÄ×ø±êÖÃÎª0
-									//		panelDraw.repaint();//ÖØ»­ÆåÅÌ
+									//		ClientService.getClientService().setGameData(i, j, currenttype);//ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½Ğµï¿½ï¿½ï¿½ï¿½Óµï¿½Ô­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª0
+									//		panelDraw.repaint();//ï¿½Ø»ï¿½ï¿½ï¿½ï¿½ï¿½
 									//		String str="SETPOS|"+gametableIndex+"|"+side+"|"+i+"|"+j+"|"+ChessType;
 									//		ClientService.getClientService().getClientGame().sendMSG(str);
 									//		return;
 									//	}
 										break;
-									case 241://ÅĞ¶Ï  Âí  ×ßµÄÊÇ·ñÕıÈ·£¬ÂíÖ»ÄÜ×ßÈÕ×Ö    
+									case 241://ï¿½Ğ¶ï¿½  ï¿½ï¿½  ï¿½ßµï¿½ï¿½Ç·ï¿½ï¿½ï¿½È·ï¿½ï¿½ï¿½ï¿½Ö»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½    
 									case 242:
 										int data3[][]=ClientService.getClientService().getGameData();
 										int chess3=-1;
@@ -785,9 +785,9 @@ public class GameForm extends JFrame {
 												j=j2;
 											
 											}else{
-												ClientService.getClientService().setGameData(i, j, currenttype);//½«±»Ñ¡ÖĞµÄÆå×ÓµÄÔ­À´µÄ×ø±êÖÃÎª0
-												panelDraw.repaint();//ÖØ»­ÆåÅÌ
-												if (!isMeachine) {//ÅĞ¶ÏÊÇ·ñÊÇÈË»úÄ£Ê½
+												ClientService.getClientService().setGameData(i, j, currenttype);//ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½Ğµï¿½ï¿½ï¿½ï¿½Óµï¿½Ô­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª0
+												panelDraw.repaint();//ï¿½Ø»ï¿½ï¿½ï¿½ï¿½ï¿½
+												if (!isMeachine) {//ï¿½Ğ¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ë»ï¿½Ä£Ê½
 													String str="SETPOS|"+gametableIndex+"|"+side+"|"+i+"|"+j+"|"+ChessType;
 													ClientService.getClientService().getClientGame().sendMSG(str);
 												}
@@ -795,16 +795,16 @@ public class GameForm extends JFrame {
 											}
 											
 										}else{
-											ClientService.getClientService().setGameData(i, j, currenttype);//½«±»Ñ¡ÖĞµÄÆå×ÓµÄÔ­À´µÄ×ø±êÖÃÎª0
-											panelDraw.repaint();//ÖØ»­ÆåÅÌ
-											if (!isMeachine) {//ÅĞ¶ÏÊÇ·ñÊÇÈË»úÄ£Ê½
+											ClientService.getClientService().setGameData(i, j, currenttype);//ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½Ğµï¿½ï¿½ï¿½ï¿½Óµï¿½Ô­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª0
+											panelDraw.repaint();//ï¿½Ø»ï¿½ï¿½ï¿½ï¿½ï¿½
+											if (!isMeachine) {//ï¿½Ğ¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ë»ï¿½Ä£Ê½
 												String str="SETPOS|"+gametableIndex+"|"+side+"|"+i+"|"+j+"|"+ChessType;
 												ClientService.getClientService().getClientGame().sendMSG(str);
 											}
 											return;
 										}
 										break;
-									case 251://ÅĞ¶Ï  Ïó  ×ßµÄÊÇ·ñÕıÈ·
+									case 251://ï¿½Ğ¶ï¿½  ï¿½ï¿½  ï¿½ßµï¿½ï¿½Ç·ï¿½ï¿½ï¿½È·
 									case 252:
 										int data4[][]=ClientService.getClientService().getGameData();
 										int chess=data4[(i+i2)/2][(j+j2)/2];
@@ -813,9 +813,9 @@ public class GameForm extends JFrame {
 												i=i2;
 												j=j2;
 											}else{
-												ClientService.getClientService().setGameData(i, j, currenttype);//½«±»Ñ¡ÖĞµÄÆå×ÓµÄÔ­À´µÄ×ø±êÖÃÎª0
-												panelDraw.repaint();//ÖØ»­ÆåÅÌ
-												if (!isMeachine) {//ÅĞ¶ÏÊÇ·ñÊÇÈË»úÄ£Ê½
+												ClientService.getClientService().setGameData(i, j, currenttype);//ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½Ğµï¿½ï¿½ï¿½ï¿½Óµï¿½Ô­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª0
+												panelDraw.repaint();//ï¿½Ø»ï¿½ï¿½ï¿½ï¿½ï¿½
+												if (!isMeachine) {//ï¿½Ğ¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ë»ï¿½Ä£Ê½
 													String str="SETPOS|"+gametableIndex+"|"+side+"|"+i+"|"+j+"|"+ChessType;
 													ClientService.getClientService().getClientGame().sendMSG(str);
 												}
@@ -823,32 +823,32 @@ public class GameForm extends JFrame {
 											}
 											
 										}else {
-											ClientService.getClientService().setGameData(i, j, currenttype);//½«±»Ñ¡ÖĞµÄÆå×ÓµÄÔ­À´µÄ×ø±êÖÃÎª0
-											panelDraw.repaint();//ÖØ»­ÆåÅÌ
-											if (!isMeachine) {//ÅĞ¶ÏÊÇ·ñÊÇÈË»úÄ£Ê½
+											ClientService.getClientService().setGameData(i, j, currenttype);//ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½Ğµï¿½ï¿½ï¿½ï¿½Óµï¿½Ô­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª0
+											panelDraw.repaint();//ï¿½Ø»ï¿½ï¿½ï¿½ï¿½ï¿½
+											if (!isMeachine) {//ï¿½Ğ¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ë»ï¿½Ä£Ê½
 												String str="SETPOS|"+gametableIndex+"|"+side+"|"+i+"|"+j+"|"+ChessType;
 												ClientService.getClientService().getClientGame().sendMSG(str);
 											}
 											return;
 										}
 										break;
-									case 261://ÅĞ¶Ï  Ê¿  ×ßµÄÊÇ·ñÕıÈ·
+									case 261://ï¿½Ğ¶ï¿½  Ê¿  ï¿½ßµï¿½ï¿½Ç·ï¿½ï¿½ï¿½È·
 									case 262:
 										int data5[][]=ClientService.getClientService().getGameData();
 										if((i2==i-1&&j2==j-1&&j-1>=7&&i-1>=3||i2==i+1&&j2==j-1&&i+1<=5&&j-1>=7||i2==i+1&&j2==j+1&&i+1<=5&&j+1<=9||i2==i-1&&j2==j+1&&i-1>=3&&j+1<=9)&&data5[i2][j2]<200){
 											i=i2;
 											j=j2;
 										}else {
-											ClientService.getClientService().setGameData(i, j, currenttype);//½«±»Ñ¡ÖĞµÄÆå×ÓµÄÔ­À´µÄ×ø±êÖÃÎª0
-											panelDraw.repaint();//ÖØ»­ÆåÅÌ
-											if (!isMeachine) {//ÅĞ¶ÏÊÇ·ñÊÇÈË»úÄ£Ê½
+											ClientService.getClientService().setGameData(i, j, currenttype);//ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½Ğµï¿½ï¿½ï¿½ï¿½Óµï¿½Ô­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª0
+											panelDraw.repaint();//ï¿½Ø»ï¿½ï¿½ï¿½ï¿½ï¿½
+											if (!isMeachine) {//ï¿½Ğ¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ë»ï¿½Ä£Ê½
 												String str="SETPOS|"+gametableIndex+"|"+side+"|"+i+"|"+j+"|"+ChessType;
 												ClientService.getClientService().getClientGame().sendMSG(str);
 											}
 											return;
 										}
 										break;
-									case 270://ÅĞ¶Ï  Ë§  ×ßµÄÊÇ·ñÕıÈ· 
+									case 270://ï¿½Ğ¶ï¿½  Ë§  ï¿½ßµï¿½ï¿½Ç·ï¿½ï¿½ï¿½È· 
 										int data6[][]=ClientService.getClientService().getGameData();
 										int count4=0;
 										if(j2<j){
@@ -859,9 +859,9 @@ public class GameForm extends JFrame {
 														i=i2;
 														j=j2;
 													}else{
-														ClientService.getClientService().setGameData(i, j, currenttype);//½«±»Ñ¡ÖĞµÄÆå×ÓµÄÔ­À´µÄ×ø±êÖÃÎª0
-														panelDraw.repaint();//ÖØ»­ÆåÅÌ
-														if (!isMeachine) {//ÅĞ¶ÏÊÇ·ñÊÇÈË»úÄ£Ê½
+														ClientService.getClientService().setGameData(i, j, currenttype);//ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½Ğµï¿½ï¿½ï¿½ï¿½Óµï¿½Ô­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª0
+														panelDraw.repaint();//ï¿½Ø»ï¿½ï¿½ï¿½ï¿½ï¿½
+														if (!isMeachine) {//ï¿½Ğ¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ë»ï¿½Ä£Ê½
 															String str="SETPOS|"+gametableIndex+"|"+side+"|"+i+"|"+j+"|"+ChessType;
 															ClientService.getClientService().getClientGame().sendMSG(str);
 														}
@@ -874,9 +874,9 @@ public class GameForm extends JFrame {
 											i=i2;
 											j=j2;
 										}else{
-											ClientService.getClientService().setGameData(i, j, currenttype);//½«±»Ñ¡ÖĞµÄÆå×ÓµÄÔ­À´µÄ×ø±êÖÃÎª0
-											panelDraw.repaint();//ÖØ»­ÆåÅÌ
-											if (!isMeachine) {//ÅĞ¶ÏÊÇ·ñÊÇÈË»úÄ£Ê½
+											ClientService.getClientService().setGameData(i, j, currenttype);//ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½Ğµï¿½ï¿½ï¿½ï¿½Óµï¿½Ô­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª0
+											panelDraw.repaint();//ï¿½Ø»ï¿½ï¿½ï¿½ï¿½ï¿½
+											if (!isMeachine) {//ï¿½Ğ¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ë»ï¿½Ä£Ê½
 												String str="SETPOS|"+gametableIndex+"|"+side+"|"+i+"|"+j+"|"+ChessType;
 												ClientService.getClientService().getClientGame().sendMSG(str);
 											}
@@ -886,40 +886,40 @@ public class GameForm extends JFrame {
 									default:
 										break;
 								} 
-							//¸üĞÂÓÎÏ·Êı¾İ
-							ClientService.getClientService().setGameData(i,j, ChessType);//ÉèÖÃÆå×ÓµÄÎ»ÖÃ
-							panelDraw.repaint();//ÖØĞÂ»­Í¼
+							//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½
+							ClientService.getClientService().setGameData(i,j, ChessType);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Óµï¿½Î»ï¿½ï¿½
+							panelDraw.repaint();//ï¿½ï¿½ï¿½Â»ï¿½Í¼
 							if(count%2==0){
 								isClick=false; 
 								//count++;
 							}
-							 //Ö»ÄÜµÈ´ı¶Ô·½³ö×Ó
+							 //Ö»ï¿½ÜµÈ´ï¿½ï¿½Ô·ï¿½ï¿½ï¿½ï¿½ï¿½
 							
-							// ·¢ËÍ¸ñÊ½£ºSETPOS|×ÀºÅ|×ùÎ»ºÅ|ĞĞ|ÁĞ|ÑÕÉ«	
-							if (!isMeachine) {//ÅĞ¶ÏÊÇ·ñÊÇÈË»úÄ£Ê½
+							// ï¿½ï¿½ï¿½Í¸ï¿½Ê½ï¿½ï¿½SETPOS|ï¿½ï¿½ï¿½ï¿½|ï¿½ï¿½Î»ï¿½ï¿½|ï¿½ï¿½|ï¿½ï¿½|ï¿½ï¿½É«	
+							if (!isMeachine) {//ï¿½Ğ¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ë»ï¿½Ä£Ê½
 								String  str="SETPOS|"+gametableIndex+"|"+side+"|"+i+"|"+j+"|"+ChessType;
 								ClientService.getClientService().getClientGame().sendMSG(str);
 							}
 						 }
 					}
 					
-				/*	//¸üĞÂÓÎÏ·Êı¾İ
-					ClientService.getClientService().setGameData(i, j, ChessType);//ÉèÖÃÆå×ÓµÄÎ»ÖÃ
-					panelDraw.repaint();//ÖØĞÂ»­Í¼
-					isClick=false;  //Ö»ÄÜµÈ´ı¶Ô·½³ö×Ó
+				/*	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½
+					ClientService.getClientService().setGameData(i, j, ChessType);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Óµï¿½Î»ï¿½ï¿½
+					panelDraw.repaint();//ï¿½ï¿½ï¿½Â»ï¿½Í¼
+					isClick=false;  //Ö»ï¿½ÜµÈ´ï¿½ï¿½Ô·ï¿½ï¿½ï¿½ï¿½ï¿½
 					
-					// ·¢ËÍ¸ñÊ½£ºSETPOS|×ÀºÅ|×ùÎ»ºÅ|ĞĞ|ÁĞ|ÑÕÉ«		
+					// ï¿½ï¿½ï¿½Í¸ï¿½Ê½ï¿½ï¿½SETPOS|ï¿½ï¿½ï¿½ï¿½|ï¿½ï¿½Î»ï¿½ï¿½|ï¿½ï¿½|ï¿½ï¿½|ï¿½ï¿½É«		
 					String str="SETPOS|"+gametableIndex+"|"+side+"|"+i+"|"+j+"|"+ChessType;
 					ClientService.getClientService().getClientGame().sendMSG(str);
 				*/
 				}
 			}
 			else {
-				JOptionPane.showMessageDialog(null, "ÇëµÈ´ı¶Ô·½³öÆå£¡");
-			}//ÒÔÉÏÊÇÈËÀàµÄ²Ù×÷£¬Ã¿Ò»´Î²Ù×÷»á¸Ä±äÆå¾ÖµÄÖµ£¬Í¨¹ı¸Ä±äµÄÆå¾ÖÖµÀ´½øĞĞ »úÆ÷²Ù×÷
+				JOptionPane.showMessageDialog(null, "ï¿½ï¿½È´ï¿½ï¿½Ô·ï¿½ï¿½ï¿½ï¿½å£¡");
+			}//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä²ï¿½ï¿½ï¿½ï¿½ï¿½Ã¿Ò»ï¿½Î²ï¿½ï¿½ï¿½ï¿½ï¿½Ä±ï¿½ï¿½ï¿½Öµï¿½Öµï¿½ï¿½Í¨ï¿½ï¿½ï¿½Ä±ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			
-			if (isMeachine) {//Èç¹ûÊÇÈË»úÄ£Ê½ µ÷ÓÃÈË»ú¶ÔŞÄº¯Êı ******¡¢
-				//ÈË»ú¶ÔŞÄº¯Êı¸ù¾İÆå¾ÖµÄÖµ×ö³öÅĞ¶Ï,Êä³ö½á¹û»áÖ±½Ó¸Ä±äÆå¾ÖµÄÖµ
+			if (isMeachine) {//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë»ï¿½Ä£Ê½ ï¿½ï¿½ï¿½ï¿½ï¿½Ë»ï¿½ï¿½ï¿½ï¿½Äºï¿½ï¿½ï¿½ ******ï¿½ï¿½
+				//ï¿½Ë»ï¿½ï¿½ï¿½ï¿½Äºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½Ğ¶ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½Ó¸Ä±ï¿½ï¿½ï¿½Öµï¿½Öµ
 				int game_data[][]=ClientService.getClientService().getGameData();
 			/*	for(){
 					
@@ -936,45 +936,45 @@ public class GameForm extends JFrame {
 	private class BtnStartActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent arg0) {
 			isStart=true;
-			if (isMeachine) {//Èç¹ûÊÇÈË»ú¾Í´ò¿ª isclick
+			if (isMeachine) {//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë»ï¿½ï¿½Í´ï¿½ isclick
 				isClick=true;
 			}
 			//GAMESTART|tableindex|side
-			if (!isMeachine) {//ÅĞ¶ÏÊÇ·ñÊÇÈË»úÄ£Ê½
+			if (!isMeachine) {//ï¿½Ğ¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ë»ï¿½Ä£Ê½
 				String str="GAMESTART|"+gametableIndex+"|"+side;
 				ClientService.getClientService().getClientGame().sendMSG(str);
 			}
-			txtLog.append(" ÓÎÏ·ÒÑ¾­¿ªÊ¼£¡\r\n");
+			txtLog.append(" å‡†å¤‡å¥½äº†\r\n");
 		}
 	}
 	
-	//ÍË³öÓÎÏ·°´Å¥
+	//ï¿½Ë³ï¿½ï¿½ï¿½Ï·ï¿½ï¿½Å¥
 	private class BtnCloseActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent arg0) {
-			//ÍË³öÓÎÏ·
+			//ï¿½Ë³ï¿½ï¿½ï¿½Ï·
 			//GAMEOVER@TABLEINDEX@SIDE
-			if (!isMeachine) {//ÅĞ¶ÏÊÇ·ñÊÇÈË»úÄ£Ê½
+			if (!isMeachine) {//ï¿½Ğ¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ë»ï¿½Ä£Ê½
 				String  str="GAMEOVER|"+gametableIndex+"|"+side;
 				ClientService.getClientService().getClientGame().sendMSG(str);
-				//¸üĞÂ±¾ÓÃ»§µÄÓÎÏ·×ÀÕ¼ÓĞÇé¿ö
+				//ï¿½ï¿½ï¿½Â±ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ï¿½Õ¼ï¿½ï¿½ï¿½ï¿½ï¿½
 				ClientService.getClientService().updateGameTable(gametableIndex, side, "0");
 			}
-			//Çå¿ÕÓÎÏ·Êı¾İ
+			//ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½
 			ClientService.getClientService().resetData();
-			dispose();//¹Ø±Õµ±Ç°´°Ìå
+			dispose();//ï¿½Ø±Õµï¿½Ç°ï¿½ï¿½ï¿½ï¿½
 		}
 	}
 	
-	//ÁÄÌì°´Å¥
+	//ï¿½ï¿½ï¿½ì°´Å¥
 	private class BtnSendActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent arg0) {
-			//ÁÄÌì£º   MSG|Tableindex|side|essagecontent
-			if (!isMeachine) {//ÅĞ¶ÏÊÇ·ñÊÇÈË»úÄ£Ê½
+			//ï¿½ï¿½ï¿½ì£º   MSG|Tableindex|side|essagecontent
+			if (!isMeachine) {//ï¿½Ğ¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ë»ï¿½Ä£Ê½
 				String sMsg="MSG|"+gametableIndex+"|"+side+"|"+txtSend.getText().trim();
 				ClientService.getClientService().getClientGame().sendMSG(sMsg);
 			
 			}
-			txtLog.append("ÎÒËµ£º"+txtSend.getText().trim()+"\r\n");
+			txtLog.append("ï¿½ï¿½Ëµï¿½ï¿½"+txtSend.getText().trim()+"\r\n");
 			
 			txtSend.setText("");
 		}
