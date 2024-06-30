@@ -100,7 +100,7 @@ public class GameForm extends JFrame {
 		contentPane.setLayout(null);
 		
 		panel = new JPanel();
-		panel.setBorder(new TitledBorder(null, "\u9ED1\u65B9", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panel.setBorder(new TitledBorder(null, "黑方", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		panel.setBounds(10, 10, 130, 182);
 		contentPane.add(panel);
 		panel.setLayout(null);
@@ -111,7 +111,7 @@ public class GameForm extends JFrame {
 		panel.add(lbNames[0]);
 		
 		panel_1 = new JPanel();
-		panel_1.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "�췽", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panel_1.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "红方", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		panel_1.setBounds(10, 202, 130, 182);
 		contentPane.add(panel_1);
 		panel_1.setLayout(null);
